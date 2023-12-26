@@ -1,0 +1,532 @@
+---
+title: "Beck_Assignment1"
+author: "beck"
+date: "2023-09-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(readxl)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+data <- read_excel("/Users/student/Desktop/FALL 23/IDS 572/hw/German Credit.xls")
+head(data$RESPONSE)
+table(data$RESPONSE)
+
+summary(data)
+str(data)
+head(data)
+```
+
+
+```{r}
+# 1 A
+
+sum(is.na(data))
+data$CHK_ACCT <- as.factor(data$CHK_ACCT)
+
+ggplot(data, aes(x = RESPONSE)) +
+    geom_bar() +
+    ggtitle("Distribution of Credit Risk (Good vs. Bad)") +
+    xlab("Credit Risk") +
+    ylab("Count")
+print(table(data$RESPONSE))
+# 0   1
+# 300 700
+
+credit_risk_distribution <- table(data$RESPONSE) /
+    nrow(data)
+
+print(credit_risk_distribution)
+#  0   1
+# 0.3 0.7
+# good credit (1): 70% , bad credit (0): 30%
+
+```
+
+```{r}
+# b
+data %>%
+    group_by(RESPONSE) %>%
+    summarise(
+        min_age = min(AGE),
+        max_age = max(AGE),
+        avg_age = mean(AGE),
+        median_age = median(AGE)
+    )
+ggplot(data, aes(x = RESPONSE, y = AGE)) +
+    geom_boxplot() +
+    ggtitle("Distribution of Age by Credit Risk") +
+    xlab("Credit Risk") +
+    ylab("Age")
+ggplot(data, aes(x = AGE, fill = RESPONSE)) +
+    geom_density(alpha = 0.5) +
+    ggtitle("Density Distribution of Age by Credit Risk") +
+    xlab("Age") +
+    ylab("Density")
+
+# on avg , the younger age has greater risj
+
+```
+
+
+```{r}
+# c
+data %>%
+    group_by(RESPONSE) %>%
+    summarise(
+        min_amount = min(AMOUNT),
+        max_amount = max(AMOUNT),
+        avg_amount = mean(AMOUNT),
+        median_amount = median(AMOUNT)
+    )
+avg_good_credit <- mean(data$AMOUNT[data$RESPONSE == "Good"])
+avg_bad_credit <- mean(data$AMOUNT[data$RESPONSE == "Bad"])
+# Initialize ggplot only once
+p <- ggplot(data, aes(x = AMOUNT, fill = RESPONSE))
+
+# Add the first histogram layer
+p <- p + geom_histogram(binwidth = 500, alpha = 0.5, position = "identity")
+
+# Add the second histogram layer
+# Note: It's not clear why you'd add the same histogram twice, but assuming you have a reason
+p <- p + geom_histogram(binwidth = 500, alpha = 0.5, position = "identity")
+
+# Add a vertical line
+p <- p + geom_vline(aes(xintercept = avg_good_credit, color = "Good"),
+                    linetype = "dashed", size = 1)
+
+# Add title and labels
+p <- p + ggtitle("Distribution of Credit Amounts by Credit Risk") +
+    xlab("Credit Amount") +
+    ylab("Frequency")
+
+# Add custom colors
+p <- p + scale_color_manual(values = c("Good" = "blue", "Bad" = "red"))
+
+# Print the plot
+print(p)
+
+# Initialize ggplot only once
+p <- ggplot(data, aes(x = AMOUNT, fill = RESPONSE))
+
+# Add the first histogram layer
+p <- p + geom_histogram(binwidth = 500, alpha = 0.5, position = "identity")
+
+# Add the second histogram layer
+# Note: It's not clear why you'd add the same histogram twice, but assuming you have a reason
+p <- p + geom_histogram(binwidth = 500, alpha = 0.5, position = "identity")
+
+# Add the first vertical line for 'Good' credit
+p <- p + geom_vline(aes(xintercept = avg_good_credit, color = "Good"),
+                    linetype = "dashed", size = 1)
+
+# Add the second vertical line for 'Bad' credit
+p <- p + geom_vline(aes(xintercept = avg_bad_credit, color = "Bad"),
+                    linetype = "dashed", size = 1)
+
+# Add title and labels
+p <- p + ggtitle("Distribution of Credit Amounts by Credit Risk") +
+         xlab("Credit Amount") +
+         ylab("Frequency")
+
+# Add custom colors
+p <- p + scale_color_manual(values = c("Good" = "blue", "Bad" = "red"))
+
+# Print the plot
+print(p)
+
+# credit amounts are higher on avg for bad credit risks
+```
+
+```{r}
+# d
+data %>%
+    summarise(
+        min_duration = min(DURATION),
+        max_duration = max(DURATION),
+        avg_duration = mean(DURATION),
+        median_duration = median(DURATION)
+    )
+ggplot(data, aes(x = DURATION)) +
+    geom_histogram(aes(y = ..density..), binwidth = 3, fill = "blue", alpha = 0.7) +
+    geom_density(alpha = 0.2, fill = "#FF6666") +
+    ggtitle("Distribution of Loan Durations") +
+    xlab("Duration (in months)") +
+    ylab("Density")
+
+# majority of loan durations are on the shorter end
+```
+
+```{r}
+
+# f
+ggplot(data, aes(x = DURATION)) +
+    geom_histogram(binwidth = 5, fill = "blue", alpha = 0.7) +
+    facet_wrap(~RESPONSE) +
+    ggtitle("Loan Duration by Credit Risk") +
+    xlab("Loan Duration (Months)") +
+    ylab("Frequency")
+ggplot(data, aes(x = DURATION, fill = RESPONSE)) +
+    geom_density(alpha = 0.5) +
+    facet_wrap(~RESPONSE) +
+    ggtitle("Loan Duration by Credit Risk") +
+    xlab("Loan Duration (Months)") +
+    ylab("Density")
+
+# more loan durations for good credit risk are shorter
+```
+
+```{r}
+# g
+
+ggplot(data, aes(x = RESPONSE)) +
+    geom_bar(aes(fill = RESPONSE), position = "dodge") +
+    ggtitle("Distribution of Credit Risk Categories") +
+    xlab("Credit Risk Category") +
+    ylab("Frequency") +
+    scale_fill_brewer(palette = "Set1")
+```
+```{r}
+# h
+
+ggplot(data, aes(x = AGE)) +
+    geom_histogram(binwidth = 5, fill = "blue", alpha = 0.7) +
+    ggtitle("Age Distribution of Credit Applicants") +
+    xlab("Age") +
+    ylab("Frequency")
+```
+
+```{r}
+# i
+data$RESPONSE <- as.factor(data$RESPONSE)
+
+ggplot(data, aes(x = AGE, y = AMOUNT)) +
+    geom_point(aes(color = RESPONSE), alpha = 0.6) +
+    ggtitle("Scatterplot of Credit Amount vs Age") +
+    xlab("Age") +
+    ylab("Credit Amount") +
+    scale_color_brewer(palette = "Set1")
+
+# j
+ggplot(data, aes(x = RESPONSE, y = AMOUNT)) +
+    geom_boxplot(aes(fill = RESPONSE)) +
+    ggtitle("Boxplot of Credit Amounts by Credit Risk Category") +
+    xlab("Credit Risk Category") +
+    ylab("Credit Amount") +
+    scale_fill_brewer(palette = "Set1")
+
+```
+
+```{r}
+# l
+
+summary_stats <- data %>%
+    group_by(RESPONSE) %>%
+    summarise(
+        mean_age = mean(AGE, na.rm = TRUE),
+        median_age = median(AGE, na.rm = TRUE)
+    )
+
+print(summary_stats)
+#  RESPONSE mean_age median_age
+# 0            34.0         31
+# 1            36.2         34
+```
+
+
+```{r}
+# m
+
+subset_data <- data %>%
+    filter(OWN_RES == 1)
+
+
+credit_risk_dist <- subset_data %>%
+    group_by(RESPONSE) %>%
+    summarise(count = n())
+
+print(credit_risk_dist)
+
+
+avg_age <- mean(subset_data$AGE, na.rm = TRUE)
+print(paste("Average age:", avg_age))
+# avg age is higher by a little more than a year, and more people that own houses have good credit risk
+```
+
+```{r}
+
+# n
+
+numerical_vars <- data %>% select(AGE, AMOUNT, DURATION)
+cor_matrix <- cor(numerical_vars, use = "pairwise.complete.obs")
+
+library(reshape2)
+
+melted_cor_matrix <- melt(cor_matrix)
+ggplot(data = melted_cor_matrix, aes(x = Var1, y = Var2)) +
+    geom_tile(aes(fill = value), colour = "white") +
+    scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 0) +
+    geom_text(aes(label = sprintf("%.2f", value)), vjust = 1) +
+    theme_minimal() +
+    labs(fill = "Correlation")
+
+# correlation for low age and low duration, and med age med duration, and high age high duration is highest correlation at 1
+```
+
+```{r}
+
+# o
+threshold <- quantile(data$AMOUNT, 0.75) # For example, setting the 75th percentile as the threshold
+data$HighCredit <- ifelse(data$AMOUNT > threshold, 1, 0)
+data$AgeAmountInteraction <- data$AGE * data$AMOUNT
+data$AmountZScore <- (data$AMOUNT - mean(data$AMOUNT)) / sd(data$AMOUNT)
+sum(is.na(data))
+summary(data)
+summary(select(data, AGE, AMOUNT, DURATION))
+
+data %>%
+    group_by(RESPONSE) %>%
+    summarise(
+        Mean_Age = mean(AGE, na.rm = TRUE),
+        Median_Age = median(AGE, na.rm = TRUE),
+        Mean_Amount = mean(AMOUNT, na.rm = TRUE),
+        Median_Amount = median(AMOUNT, na.rm = TRUE)
+    )
+
+chisq.test(data$RESPONSE, data$AGE)
+```
+
+```{r}
+# 2
+
+## PROBLEM 2
+
+
+library(caTools)
+
+set.seed(123)
+split <- sample.split(data$RESPONSE, SplitRatio = 0.5) # For a 50/50 split
+train_data <- subset(data, split == TRUE)
+test_data <- subset(data, split == FALSE)
+library(rpart)
+
+fit <- rpart(RESPONSE ~ ., data = train_data, method = "class")
+
+pred <- predict(fit, newdata = test_data, type = "class")
+```
+```{r}
+library(caret)
+
+confusionMatrix(pred, test_data$RESPONSE)
+# Accuracy : 0.716 
+fit <- rpart(RESPONSE ~ ., data = train_data, method = "class", minsplit = 20, cp = 0.01)
+pruned_fit <- prune(fit, cp = fit$cptable[which.min(fit$cptable[, "xerror"]), "CP"])
+library(C50)
+```
+
+```{r}
+# C5.0 model
+fit_C50 <- C5.0(RESPONSE ~ ., data = train_data)
+```
+
+```{r}
+fit$variable.importance
+# chk acct most important at 30.372
+```
+
+```{r}
+
+loaded_model <- readRDS("decision_tree_model.rds")
+library(randomForest)
+colnames(train_data)[which(colnames(train_data) == "OBS#")] <- "OBS"
+colnames(train_data)[which(colnames(train_data) == "RADIO/TV")] <- "RADIO_TV"
+```
+
+```{r}
+#
+fit <- rpart(RESPONSE ~ ., data = train_data, method = "class")
+print(fit$variable.importance)
+```
+
+
+```{r}
+# 50/50 split
+index1 <- createDataPartition(data$RESPONSE, p = 0.5, list = FALSE)
+train1 <- data[index1, ]
+test1 <- data[-index1, ]
+```
+
+
+
+```{r}
+# 70/30 split
+index2 <- createDataPartition(data$RESPONSE, p = 0.7, list = FALSE)
+train2 <- data[index2, ]
+test2 <- data[-index2, ]
+```
+
+
+```{r}
+# 80/20 split
+index3 <- createDataPartition(data$RESPONSE, p = 0.8, list = FALSE)
+train3 <- data[index3, ]
+test3 <- data[-index3, ]
+```
+
+```{r}
+library(rpart)
+fit_CART1 <- rpart(RESPONSE ~ ., data = train1, method = "class")
+fit_CART2 <- rpart(RESPONSE ~ ., data = train2, method = "class")
+fit_CART3 <- rpart(RESPONSE ~ ., data = train3, method = "class")
+```
+
+```{r}
+library(C50)
+fit_C50_1 <- C5.0(RESPONSE ~ ., data = train1)
+fit_C50_2 <- C5.0(RESPONSE ~ ., data = train2)
+fit_C50_3 <- C5.0(RESPONSE ~ ., data = train3)
+```
+
+```{r}
+pred_CART2 <- predict(fit_CART2, newdata = test2, type = "class")
+confusionMatrix(pred_CART2, test2$RESPONSE)
+# Accuracy : 0.7433 
+```
+
+```{r}
+pred_CART3 <- predict(fit_CART3, newdata = test3, type = "class")
+confusionMatrix(pred_CART3, test3$RESPONSE)
+# Accuracy : 0.75 
+```
+
+```{r}
+# For C5.0 Models
+pred_C50_1 <- predict(fit_C50_1, newdata = test1)
+confusionMatrix(pred_C50_1, test1$RESPONSE)
+# Accuracy : 0.706  
+```
+
+```{r}
+pred_C50_2 <- predict(fit_C50_2, newdata = test2)
+confusionMatrix(pred_C50_2, test2$RESPONSE)
+# Accuracy : 0.7067  
+```
+ 
+```{r}
+pred_C50_3 <- predict(fit_C50_3, newdata = test3)
+confusionMatrix(pred_C50_3, test3$RESPONSE)
+# Accuracy : 0.725 
+fit_pruned_CART <- rpart(RESPONSE ~ ., data = train1, method = "class", cp = 0.01) 
+```
+
+```{r}
+## PROBLEM 3
+
+library(rpart)
+
+# misclassification cost matrix
+loss_matrix <- matrix(
+    c(
+        0, 500,
+        100, 0
+    ),
+    ncol = 2
+)
+
+colnames(loss_matrix) <- rownames(loss_matrix) <- c("Good", "Bad")
+
+```
+
+```{r}
+set.seed(123)
+split <- createDataPartition(data$RESPONSE, p = 0.7, list = FALSE)
+training <- data[split, ]
+testing <- data[-split, ]
+```
+
+```{r}
+model_with_cost <- rpart(RESPONSE ~ ., data = training, method = "class", parms = list(loss = loss_matrix))
+
+
+```
+
+```{r}
+predictions_with_cost <- predict(model_with_cost, testing, type = "class")
+
+```
+
+```{r}
+conf_matrix_with_cost <- table(predictions_with_cost, testing$RESPONSE)
+print(conf_matrix_with_cost)
+pred <- as.factor(pred)
+testing$RESPONSE <- as.factor(testing$RESPONSE)
+model_without_cost <- rpart(RESPONSE ~ ., data = training, method = "class")
+predictions_without_cost <- predict(model_without_cost, testing, type = "class")
+
+```
+
+```{r}
+conf_matrix_without_cost <- table(predictions_without_cost, testing$RESPONSE)
+print(conf_matrix_without_cost)
+#    0   1
+# 0  44  27
+# 1  52 177
+```
+
+```{r}
+library(rpart.plot)
+```
+
+```{r}
+rpart.plot(fit, type = 4, extra = 101)
+good_applicants <- subset(data, AGE > 30 & AMOUNT > 700)
+print(good_applicants)
+head(good_applicants)
+fit <- rpart(RESPONSE ~ ., data = train_data, method = "class")
+```
+
+```{r}
+printcp(fit)
+
+plot(fit)
+text(fit)
+```
+
+```{r}
+# (4)
+
+# 4 What are the best nodes for classifying “Good” applicants? Output rules corresponding to these. Please explain why you chose these nodes.
+printcp(fit)
+summary(fit)
+print(fit)
+pruned_tree <- prune(fit, cp = 0.01)
+library(rpart.plot)
+rpart.rules(pruned_tree)
+```
+
+```{r}
+# (5) What are the important variables to estimate the risk to customers?
+print(fit$variable.importance)
+```
+
+```{r}
+# for rpart
+fit <- rpart(RESPONSE ~ ., data = train_data, method = "class")
+fit$variable.importance
+# the most important variables are 1. CHK_ACCT at 30.37, 2. SAV_ACCT at 12.33, and 3. DURATION at 11.70
+
+```
+
+```{r}
+# (6) Summarize your findings.
+# Checking Account Status (CHK_ACCT) has the highest score at 30.37, thus the status of an applicant's checking account is the most important variable in assessing risk
+```

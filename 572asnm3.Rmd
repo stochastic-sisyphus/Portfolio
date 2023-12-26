@@ -1,0 +1,135 @@
+---
+title: "Beck_Vanessa_Assignment3"
+author: "beck"
+date: "2023-11-15"
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
+library(readxl)
+library(dplyr)
+library(caret)
+library(pROC)
+library(rpart)
+```
+
+```{r}
+data <- read_excel("/Users/student/Desktop/PAST SEMS/FALL 23/IDS 572/hw/IMB485-XLS-ENG.xlsx")
+```
+
+# (2)
+# best approach is to exclude such parameters from the model
+# parametes that are not available at the time of decision making are not present in the model
+
+```{r}
+data$Gender <- as.factor(data$Gender)
+data$Board_SSC <- as.factor(data$Board_SSC)
+data$Board_HSC <- as.factor(data$Board_HSC)
+data$Stream_HSC <- as.factor(data$Stream_HSC)
+data$Course_Degree <- as.factor(data$Course_Degree)
+data$Entrance_Test <- as.factor(data$Entrance_Test)
+data$Specialization_MBA <- as.factor(data$Specialization_MBA)
+
+data <- na.omit(data)
+```
+
+```{r}
+# (3) logistic regression model using only SSC percentage
+model_ssc <- glm(Placement_B ~ Percent_SSC, data = data, family = "binomial")
+summary(model_ssc)
+```
+
+```{r}
+# (4) placement probabilities for  SSC percentages
+new_data <- data.frame(Percent_SSC = c(60, 80))
+predicted_probabilities <- predict(model_ssc, newdata = new_data, type = "response")
+predicted_probabilities
+```
+
+```{r}
+# (5) best cutoff probability = 0.780510400018327
+roc_curve <- roc(data$Placement_B, fitted(model_ssc))
+best_cutoff <- coords(roc_curve, "best", ret = "threshold")
+print(paste("Best Cutoff:", best_cutoff))
+```
+
+```{r}
+# (6) logistic regression model with all appropriate parameters
+model_full <- glm(Placement_B ~ Percent_SSC + Percent_HSC + Percent_Degree + Experience_Yrs + Percentile_ET + Percent_MBA, data = data, family = "binomial")
+summary(model_full)
+```
+
+```{r}
+# (7) sensitivity and specificity at 0.7 cut-off
+predicted_class <- ifelse(predict(model_full, type = "response") > 0.7, 1, 0)
+conf_matrix <- confusionMatrix(factor(predicted_class), factor(data$Placement_B))
+sensitivity_specificity_0_7 <- conf_matrix$byClass[c("Sensitivity", "Specificity")]
+```
+
+```{r}
+# (8) optimal threshold considering cost
+calculate_cost <- function(threshold, data, model) {
+    predicted_class <- ifelse(predict(model, type = "response") > threshold, 1, 0)
+    table <- table(factor(predicted_class, levels = c(0, 1)), factor(data$Placement_B, levels = c(0, 1)))
+    fp_cost <- 4 * table[2, 1]
+    fn_cost <- table[1, 2]
+    total_cost <- fp_cost + fn_cost
+    return(total_cost)
+}
+
+thresholds <- seq(0, 1, by = 0.01)
+
+costs <- sapply(thresholds, calculate_cost, data = data, model = model_full)
+
+for (i in 1:length(thresholds)) {
+    print(paste("Threshold:", thresholds[i], "Cost:", costs[i]))
+}
+
+optimal_threshold <- thresholds[which.min(costs)]
+print(paste("Optimal Threshold:", optimal_threshold))
+# Optimal Threshold: 0.76
+```
+
+```{r}
+# (9) decision tree model
+tree_model <- rpart(Placement_B ~ ., data = data, method = "class")
+tree_pred <- predict(tree_model, newdata = data, type = "class")
+tree_conf_matrix <- confusionMatrix(tree_pred, factor(data$Placement_B))
+```
+
+```{r}
+# model comparison
+log_conf_matrix <- conf_matrix
+comparison <- data.frame(
+    Model = c("Logistic Regression", "Decision Tree"),
+    Accuracy = c(log_conf_matrix$overall["Accuracy"], tree_conf_matrix$overall["Accuracy"]),
+    Sensitivity = c(log_conf_matrix$byClass["Sensitivity"], tree_conf_matrix$byClass["Sensitivity"]),
+    Specificity = c(log_conf_matrix$byClass["Specificity"], tree_conf_matrix$byClass["Specificity"])
+)
+comparison
+```
+
+```{r}
+print(paste("Best cutoff (ROC):", best_cutoff))
+print(paste("Optimal threshold (Cost):", optimal_threshold))
+print("Model Comparison:")
+print(comparison)
+```
+
+
+# (10) recommendation
+
+# logistic reg had good accuracy (0.7654321) and good specificity (0.8965517) , but low sensitivity (0.2222222)
+# model needs improvement with sensitivity
+# to improve sensitivity can:
+# use more relevant predictors, adjust model parameters, or use different modeling techniques
+
+
+# decsion tree had perfect (1.0) accuracy, sensitivity, and sepecificity
+# however, these perfect results indicate overfitting to the training data (may not be good for new unseen data)
+#
+# model choice = logistic regression
+# but with logistic reg, be sure to include
+# regular model updates, sensitivity improvements, and consideration of non-quantifiable factors
+

@@ -1,0 +1,79 @@
+---
+title: "Housing and Phishing Data Analysis"
+output: html_document
+---
+
+## Introduction
+
+This document contains an analysis of housing and phishing datasets.
+
+## Load Libraries
+
+```{r}
+library(randomForest)
+library(ggplot2)
+library(e1071)
+library(caTools)
+library(caret)
+library(rpart)
+library(foreign)
+
+## Housing 
+
+housing_data <- read.csv("/Users/student/Desktop/PAST SEMS/FALL 23/IDS 572/hw/housing.csv")
+
+na_count <- sapply(housing_data, function(y) sum(is.na(y)))
+print(paste("NA counts:", na_count))
+housing_data <- na.omit(housing_data)
+
+ggplot(housing_data, aes(x = longitude, y = latitude)) +
+  geom_point(aes(color = median_house_value, size = population), alpha = 0.4) +
+  labs(title = "California Housing Prices", x = "Longitude", y = "Latitude")
+
+set.seed(123)
+samp <- sample(1:nrow(housing_data), 0.7 * nrow(housing_data))
+train_data <- housing_data[samp, ]
+test_data <- housing_data[-samp, ]
+
+rf_model <- randomForest(median_house_value ~ ., data = train_data, ntree = 100)
+pred <- predict(rf_model, newdata = test_data)
+mse <- mean((pred - test_data$median_house_value)^2)
+print(paste("Test MSE: ", round(mse, 2)))
+
+
+## problem 4: positive class = when the loan is paid back by an individual
+## recall 75 = model predicted accurately 75% of all actual positive cases 
+# recall 85 = of all predicted positive cases, 85% actually did pay back the loan
+## choose accuracy 0.967
+
+
+## Phishing 
+
+phishing_data <- read.arff("/Users/student/Desktop/PAST SEMS/FALL 23/IDS 572/hw/Training Dataset.arff")
+print(sum(is.na(phishing_data)))
+phishing_data <- na.omit(phishing_data)
+
+set.seed(123)
+split <- sample.split(phishing_data$Result, SplitRatio = 0.8)
+train_data_phishing <- subset(phishing_data, split == TRUE)
+test_data_phishing <- subset(phishing_data, split == FALSE)
+
+rf_model_phishing <- randomForest(Result ~ ., data = train_data_phishing)
+predicted_values_rf <- predict(rf_model_phishing, newdata = test_data_phishing)
+cm_rf <- confusionMatrix(predicted_values_rf, test_data_phishing$Result)
+print(cm_rf)
+
+dt_model <- rpart(Result ~ ., data = train_data_phishing, method = "class")
+
+predicted_values_dt <- predict(dt_model, newdata = test_data_phishing, type = "class")
+cm_dt <- confusionMatrix(predicted_values_dt, test_data_phishing$Result)
+print(cm_dt)
+
+## random forest has higher accuracy , specificity, sensitivity, ppv, npv, and kappa
+## random forest also has higher accuracy
+
+
+```
+
+
+
