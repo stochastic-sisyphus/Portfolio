@@ -1,0 +1,974 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/josecuervo420/Portfolio/blob/main/Text_analytics_Project.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "roR6J4YMypo6"
+      },
+      "source": [
+        "# Problem 1: Language Modeling [100 points]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cpeDqIs5xM_E"
+      },
+      "source": [
+        "Problem 1: Language Modeling [100 points]\n",
+        "\n",
+        "Import Libraries"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "aHVVsCfvndkb"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "import random\n",
+        "from nltk.corpus import brown\n",
+        "import math\n",
+        "from collections import Counter, defaultdict"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "uwWLTHU3xd6e"
+      },
+      "source": [
+        "Problem 1: Language Modeling [100 points]\n",
+        "\n",
+        "Part 1 of 3: Setup and Prepare the Data"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G0au9u8nxi59",
+        "outputId": "15171b26-e30b-4293-c07c-e7f959a7162c"
+      },
+      "outputs": [
+        {
+          "name": "stderr",
+          "output_type": "stream",
+          "text": [
+            "[nltk_data] Downloading package brown to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping corpora/brown.zip.\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Ensure you have the Brown corpus downloaded:\n",
+        "import nltk\n",
+        "nltk.download('brown')\n",
+        "\n",
+        "# Retrieve the sentences from the Brown corpus\n",
+        "brown_sentences = brown.sents()\n",
+        "\n",
+        "# Split the data into training, validation, and test sets\n",
+        "D_train = brown_sentences[:40138]\n",
+        "D_val = brown_sentences[40138:45872]\n",
+        "D_test = brown_sentences[45872:]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mnRNVSbNxl_Y"
+      },
+      "source": [
+        "Problem 1: Language Modeling [100 points]\n",
+        "  \n",
+        "  Part 2 of 3: Implement both Unigram and Bigram Models"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "B3LEOTiNxpjO"
+      },
+      "outputs": [],
+      "source": [
+        "# Function to build a unigram model\n",
+        "def build_unigram_model(sentences):\n",
+        "    model = Counter()\n",
+        "    for sentence in sentences:\n",
+        "        for word in sentence:\n",
+        "            model[word] += 1\n",
+        "    total_count = sum(model.values())\n",
+        "    for word in model:\n",
+        "        model[word] /= total_count\n",
+        "    return model\n",
+        "\n",
+        "# Function to build a bigram model\n",
+        "def build_bigram_model(sentences):\n",
+        "    model = defaultdict(Counter)\n",
+        "    for sentence in sentences:\n",
+        "        previous_word = None\n",
+        "        for word in sentence:\n",
+        "            if previous_word is not None:\n",
+        "                model[previous_word][word] += 1\n",
+        "            previous_word = word\n",
+        "    for previous_word in model:\n",
+        "        total_count = sum(model[previous_word].values())\n",
+        "        for word in model[previous_word]:\n",
+        "            model[previous_word][word] /= total_count\n",
+        "    return model\n",
+        "\n",
+        "# Build unigram and bigram models\n",
+        "unigram_model = build_unigram_model(D_train)\n",
+        "bigram_model = build_bigram_model(D_train)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0Sh2sGlBxwly"
+      },
+      "source": [
+        "Problem 1: Language Modeling [100 points]\n",
+        "\n",
+        "Part 3 of 3: Calculating the Perplexity\n",
+        "* To measure how well the probability of the model predicts a sample.\n",
+        "* A lower perplexity indicates a better predictive model.\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "68vaWrMcxzbH",
+        "outputId": "a3489ce6-7fbe-4139-bf1c-e4fe3f67db2d"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Unigram Perplexity on Training Data: inf\n",
+            "Bigram Perplexity on Training Data: inf\n",
+            "Unigram Perplexity on Test Data: inf\n",
+            "Bigram Perplexity on Test Data: inf\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Function to calculate perplexity\n",
+        "def calculate_perplexity(model, sentences, n_gram=1):\n",
+        "    perplexity = 1\n",
+        "    N = 0\n",
+        "    for sentence in sentences:\n",
+        "        for i in range(len(sentence) - n_gram + 1):\n",
+        "            if n_gram == 1:\n",
+        "                word = sentence[i]\n",
+        "                # Using a small value to avoid log(0)\n",
+        "                word_probability = model.get(word, 1e-6)\n",
+        "            else:\n",
+        "                previous_word = sentence[i-1] if i > 0 else None\n",
+        "                word = sentence[i]\n",
+        "                word_probability = model[previous_word].get(word, 1e-6)  # Using a small value to avoid log(0)\n",
+        "            perplexity = perplexity * (1 / word_probability)\n",
+        "            N += 1\n",
+        "    perplexity = math.pow(perplexity, 1/float(N))\n",
+        "    return perplexity\n",
+        "\n",
+        "# Calculate perplexity\n",
+        "unigram_perplexity_train = calculate_perplexity(unigram_model, D_train)\n",
+        "bigram_perplexity_train = calculate_perplexity(bigram_model, D_train, n_gram=2)\n",
+        "unigram_perplexity_test = calculate_perplexity(unigram_model, D_test)\n",
+        "bigram_perplexity_test = calculate_perplexity(bigram_model, D_test, n_gram=2)\n",
+        "\n",
+        "# Print the perplexities\n",
+        "print(f\"Unigram Perplexity on Training Data: {unigram_perplexity_train}\")\n",
+        "print(f\"Bigram Perplexity on Training Data: {bigram_perplexity_train}\")\n",
+        "print(f\"Unigram Perplexity on Test Data: {unigram_perplexity_test}\")\n",
+        "print(f\"Bigram Perplexity on Test Data: {bigram_perplexity_test}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "1Qaqocp-CHjA"
+      },
+      "source": [
+        "Problem 1 part B:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "RnM481-eCbJ4"
+      },
+      "outputs": [],
+      "source": [
+        "# Implement add-λ smoothing method for unigram model\n",
+        "def add_lambda_smoothing_unigram(unigram_model, lambda_, vocabulary_size):\n",
+        "    smoothed_model = {}\n",
+        "    total_count = sum(unigram_model.values())\n",
+        "    for word, count in unigram_model.items():\n",
+        "        smoothed_model[word] = (count + lambda_) / (total_count + lambda_ * vocabulary_size)\n",
+        "    return smoothed_model\n",
+        "\n",
+        "# Implement add-λ smoothing method for bigram model\n",
+        "def add_lambda_smoothing_bigram(bigram_model, lambda_, vocabulary_size):\n",
+        "    smoothed_model = defaultdict(lambda: defaultdict(float))\n",
+        "    for previous_word, word_counts in bigram_model.items():\n",
+        "        total_count = sum(word_counts.values())\n",
+        "        for word, count in word_counts.items():\n",
+        "            smoothed_model[previous_word][word] = (count + lambda_) / (total_count + lambda_ * vocabulary_size)\n",
+        "    return smoothed_model\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "s69P0lfYCt2T"
+      },
+      "source": [
+        "Problem 1 part C"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9nfIs78mCwRI",
+        "outputId": "cd85d9a1-9592-4043-b78d-98aa0a41b4b8"
+      },
+      "outputs": [
+        {
+          "name": "stderr",
+          "output_type": "stream",
+          "text": [
+            "<ipython-input-4-3a6751baa023>:15: RuntimeWarning: overflow encountered in scalar multiply\n",
+            "  perplexity = perplexity * (1 / word_probability)\n"
+          ]
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "λ = 0.1, Unigram Perplexity = inf\n",
+            "λ = 0.2, Unigram Perplexity = inf\n",
+            "λ = 0.3, Unigram Perplexity = inf\n",
+            "λ = 0.4, Unigram Perplexity = inf\n",
+            "λ = 0.5, Unigram Perplexity = inf\n",
+            "λ = 0.6, Unigram Perplexity = inf\n",
+            "λ = 0.7, Unigram Perplexity = inf\n",
+            "λ = 0.7999999999999999, Unigram Perplexity = inf\n",
+            "λ = 0.8999999999999999, Unigram Perplexity = inf\n",
+            "λ = 0.9999999999999999, Unigram Perplexity = inf\n",
+            "λ = 1.0999999999999999, Unigram Perplexity = inf\n",
+            "λ = 1.2, Unigram Perplexity = inf\n",
+            "λ = 1.3, Unigram Perplexity = inf\n",
+            "λ = 1.4, Unigram Perplexity = inf\n",
+            "λ = 1.5, Unigram Perplexity = inf\n",
+            "λ = 1.5999999999999999, Unigram Perplexity = inf\n",
+            "λ = 1.7, Unigram Perplexity = inf\n",
+            "λ = 1.8, Unigram Perplexity = inf\n",
+            "λ = 1.9, Unigram Perplexity = inf\n",
+            "λ = 2.0, Unigram Perplexity = inf\n",
+            "Best λ for Unigram: 0.1, with perplexity: inf\n",
+            "λ = 0.1, Bigram Perplexity = inf\n",
+            "λ = 0.2, Bigram Perplexity = inf\n",
+            "λ = 0.3, Bigram Perplexity = inf\n",
+            "λ = 0.4, Bigram Perplexity = inf\n",
+            "λ = 0.5, Bigram Perplexity = inf\n",
+            "λ = 0.6, Bigram Perplexity = inf\n",
+            "λ = 0.7, Bigram Perplexity = inf\n",
+            "λ = 0.7999999999999999, Bigram Perplexity = inf\n",
+            "λ = 0.8999999999999999, Bigram Perplexity = inf\n",
+            "λ = 0.9999999999999999, Bigram Perplexity = inf\n",
+            "λ = 1.0999999999999999, Bigram Perplexity = inf\n",
+            "λ = 1.2, Bigram Perplexity = inf\n",
+            "λ = 1.3, Bigram Perplexity = inf\n",
+            "λ = 1.4, Bigram Perplexity = inf\n",
+            "λ = 1.5, Bigram Perplexity = inf\n",
+            "λ = 1.5999999999999999, Bigram Perplexity = inf\n",
+            "λ = 1.7, Bigram Perplexity = inf\n",
+            "λ = 1.8, Bigram Perplexity = inf\n",
+            "λ = 1.9, Bigram Perplexity = inf\n",
+            "λ = 2.0, Bigram Perplexity = inf\n",
+            "Best λ for Bigram: 0.1, with perplexity: inf\n"
+          ]
+        }
+      ],
+      "source": [
+        "\n",
+        "# Perform a grid search over a range of λ values for unigram model\n",
+        "lambda_values = np.linspace(0.1, 2.0, 20)  # Example range, adjust as needed\n",
+        "best_lambda_unigram = lambda_values[0]\n",
+        "best_perplexity_unigram = float('inf')\n",
+        "\n",
+        "for lambda_ in lambda_values:\n",
+        "    smoothed_model = add_lambda_smoothing_unigram(unigram_model, lambda_, len(unigram_model))\n",
+        "    perplexity = calculate_perplexity(smoothed_model, D_val)\n",
+        "    print(f\"λ = {lambda_}, Unigram Perplexity = {perplexity}\")\n",
+        "\n",
+        "    if perplexity < best_perplexity_unigram:\n",
+        "        best_perplexity_unigram = perplexity\n",
+        "        best_lambda_unigram = lambda_\n",
+        "\n",
+        "print(f\"Best λ for Unigram: {best_lambda_unigram}, with perplexity: {best_perplexity_unigram}\")\n",
+        "\n",
+        "# Perform a grid search over a range of λ values for bigram model\n",
+        "best_lambda_bigram = lambda_values[0]\n",
+        "best_perplexity_bigram = float('inf')\n",
+        "\n",
+        "for lambda_ in lambda_values:\n",
+        "    smoothed_model = add_lambda_smoothing_bigram(bigram_model, lambda_, len(unigram_model))\n",
+        "    perplexity = calculate_perplexity(smoothed_model, D_val, n_gram=2)\n",
+        "    print(f\"λ = {lambda_}, Bigram Perplexity = {perplexity}\")\n",
+        "\n",
+        "    if perplexity < best_perplexity_bigram:\n",
+        "        best_perplexity_bigram = perplexity\n",
+        "        best_lambda_bigram = lambda_\n",
+        "\n",
+        "print(f\"Best λ for Bigram: {best_lambda_bigram}, with perplexity: {best_perplexity_bigram}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HuQ9nsFrC8Yt",
+        "outputId": "e831c586-beb9-4e44-a408-20552a18cfa2"
+      },
+      "outputs": [
+        {
+          "name": "stderr",
+          "output_type": "stream",
+          "text": [
+            "<ipython-input-4-3a6751baa023>:15: RuntimeWarning: overflow encountered in scalar multiply\n",
+            "  perplexity = perplexity * (1 / word_probability)\n"
+          ]
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Retrained Unigram Perplexity on Test Data: inf\n",
+            "Retrained Bigram Perplexity on Test Data: inf\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Combine training and validation data for retraining\n",
+        "D_train_val = D_train + D_val\n",
+        "\n",
+        "# Retrain unigram and bigram models with the combined data using best λ values\n",
+        "unigram_model_retrained = add_lambda_smoothing_unigram(build_unigram_model(D_train_val), best_lambda_unigram, len(unigram_model))\n",
+        "bigram_model_retrained = add_lambda_smoothing_bigram(build_bigram_model(D_train_val), best_lambda_bigram, len(unigram_model))\n",
+        "\n",
+        "# Calculate perplexity of the retrained models on the test data\n",
+        "unigram_perplexity_test_retrained = calculate_perplexity(unigram_model_retrained, D_test)\n",
+        "bigram_perplexity_test_retrained = calculate_perplexity(bigram_model_retrained, D_test, n_gram=2)\n",
+        "\n",
+        "print(f\"Retrained Unigram Perplexity on Test Data: {unigram_perplexity_test_retrained}\")\n",
+        "print(f\"Retrained Bigram Perplexity on Test Data: {bigram_perplexity_test_retrained}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cG3W919ECzFF"
+      },
+      "source": [
+        "Problem 1 part D"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true,
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XhAqLbvsDJxr",
+        "outputId": "d750b69f-f57b-4937-829d-72340d82f7c4"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Generated sentences from the unigram model:\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "\n",
+        "def generate_sentence_from_model(model, stop_symbol, is_bigram=False):\n",
+        "    sentence = []\n",
+        "    max_iterations = 50  # Limit to prevent infinite loop\n",
+        "\n",
+        "    if is_bigram:\n",
+        "        # Start with a random word from the model's first-level keys\n",
+        "        word = random.choice(list(model.keys()))\n",
+        "        sentence.append(word)\n",
+        "\n",
+        "        for _ in range(max_iterations):\n",
+        "            if word in model and model[word]:\n",
+        "                # Choose the next word based on the current word's following words\n",
+        "                next_word = random.choice(list(model[word].keys()))\n",
+        "                if next_word == stop_symbol:\n",
+        "                    break\n",
+        "                sentence.append(next_word)\n",
+        "                word = next_word  # Update the current word for the next iteration\n",
+        "            else:\n",
+        "                break  # Break if the current word has no following words in the model\n",
+        "    else:\n",
+        "        # For unigrams, the process is simpler\n",
+        "        for _ in range(max_iterations):\n",
+        "            word = random.choice(list(model.keys()))\n",
+        "            if word == stop_symbol:\n",
+        "                break\n",
+        "            sentence.append(word)\n",
+        "\n",
+        "    return ' '.join(sentence)\n",
+        "\n",
+        "# Assuming unigram_model_retrained and bigram_model_retrained are defined elsewhere\n",
+        "\n",
+        "# Generate sentences from the retrained unigram and bigram models\n",
+        "print(\"Generated sentences from the unigram model:\")\n",
+        "for _ in range(5):\n",
+        "    print(generate_sentence_from_model(unigram_model_retrained, '</s>'))\n",
+        "\n",
+        "print(\"\\nGenerated sentences from the bigram model:\")\n",
+        "for _ in range(5):\n",
+        "    print(generate_sentence_from_model(bigram_model_retrained, '</s>', is_bigram=True))\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kZyZ8UnyDT0N"
+      },
+      "source": [
+        "Problem 1 Part E"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4GN1RWaman68",
+        "outputId": "e3c317f5-eabb-4a20-c018-e1652848c333"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Trigram Perplexity on Test Data: inf\n",
+            "Varani has been obvious to Margenau ) Ptolemaic astronomy would be available to advance against a white gold band with a bit longer pause between sets .\n",
+            "Cereal grains furnish about 40 times greater .\n",
+            "Fig. 8 .\n",
+            "Mr. Lyford continues : `` For God's sake , I believe felt a topic .\n",
+            "He has not been for Hitler's war .\n"
+          ]
+        }
+      ],
+      "source": [
+        "from collections import defaultdict, Counter\n",
+        "import random\n",
+        "import math\n",
+        "\n",
+        "def build_trigram_model(sentences):\n",
+        "    model = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))\n",
+        "    for sentence in sentences:\n",
+        "        sentence = ['<s>', '<s>'] + sentence + ['</s>']\n",
+        "        for i in range(len(sentence) - 2):\n",
+        "            model[sentence[i]][sentence[i+1]][sentence[i+2]] += 1\n",
+        "    for first_word in model:\n",
+        "        for second_word in model[first_word]:\n",
+        "            total_count = float(sum(model[first_word][second_word].values()))\n",
+        "            for third_word in model[first_word][second_word]:\n",
+        "                model[first_word][second_word][third_word] /= total_count\n",
+        "    return model\n",
+        "\n",
+        "def calculate_perplexity(model, sentences, n_gram=3):\n",
+        "    perplexity = 1\n",
+        "    N = 0\n",
+        "    for sentence in sentences:\n",
+        "        sentence = ['<s>', '<s>'] + sentence + ['</s>']\n",
+        "        for i in range(len(sentence) - n_gram + 1):\n",
+        "            if n_gram == 3:\n",
+        "                trigram = (sentence[i], sentence[i+1], sentence[i+2])\n",
+        "                if trigram[0] in model and trigram[1] in model[trigram[0]] and trigram[2] in model[trigram[0]][trigram[1]]:\n",
+        "                    word_probability = model[trigram[0]][trigram[1]][trigram[2]]\n",
+        "                else:\n",
+        "                    word_probability = 1e-6\n",
+        "            perplexity *= (1 / word_probability)\n",
+        "            N += 1\n",
+        "    perplexity = math.pow(perplexity, 1/float(N))\n",
+        "    return perplexity\n",
+        "\n",
+        "def generate_sentence_from_trigram_model(model):\n",
+        "    sentence = ['<s>', '<s>']\n",
+        "    while True:\n",
+        "        if sentence[-1] in model[sentence[-2]]:\n",
+        "            current_bigram = (sentence[-2], sentence[-1])\n",
+        "            next_words = model[current_bigram[0]][current_bigram[1]]\n",
+        "            next_word = random.choices(list(next_words.keys()), weights=next_words.values())[0]\n",
+        "            if next_word == '</s>':\n",
+        "                break\n",
+        "            sentence.append(next_word)\n",
+        "        else:\n",
+        "            break\n",
+        "    return ' '.join(sentence[2:])\n",
+        "\n",
+        "# Ensure you define and preprocess D_train and D_test before using them\n",
+        "trigram_model = build_trigram_model(D_train)\n",
+        "trigram_perplexity_test = calculate_perplexity(trigram_model, D_test, n_gram=3)\n",
+        "print(f\"Trigram Perplexity on Test Data: {trigram_perplexity_test}\")\n",
+        "\n",
+        "# Generate sentences\n",
+        "for _ in range(5):\n",
+        "    print(generate_sentence_from_trigram_model(trigram_model))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "88eUyfwQyw1h"
+      },
+      "source": [
+        "# Problem 2: State-of-the-art Language Model [25 points]\n",
+        "\n",
+        "(a) Try various queries. These could be just fragments of language utterance, free form questions, dialogues, or almost everything (even some examples of machine learning jobs). Report the 5 best and 5 worst input-output pairs. Note that you should specify your inputs and what ChatGPT outputs for her responses."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "TfeMzD3ny1ZU"
+      },
+      "outputs": [],
+      "source": [
+        "## 5 Best input-output pairs\n",
+        "# input: What is the biest building - output \"the tallest building in the world is the Burj Khalifa in Dubai, United Arab Emirartes, stanidng at a hgith of 828 meters\"\n",
+        "# input: 'cold weather' output: 'cold weather can be defined as temperatures below the comfort zones of humans beings.\n",
+        "# input: 'red chapstick' output: 'typically refers to a type of lip balm or lip moisturizer that comes in a red-colored tube or container. Chapstick is a brand name that has become synonymous with lip balm, much like Kleenex is often used to refer to facial tissues.The red color is often associated with various flavors or scents, such as cherry or strawberry.'\n",
+        "# input: 'space nuisance' Output: 'space nuisance encompasses a range of challenges and issues that arise from humanity's increasing presence and activity in space'\n",
+        "# input: 'super cala' Output: It seems like you're referring to the phrase \"supercalifragilisticexpialidocious,\" which gained popularity through the Disney movie \"Mary Poppins.\"\n",
+        "\n",
+        "## 5 Worst input-output pairs\n",
+        "# input: kill mocking\" output: earth ervolves around the sun\"\n",
+        "# input: 'rabbit buggy' output\" 'amusment park ride'\n",
+        "# input: 'tres tristes tigeres' Output: 'literal interpretation, three sad tigers'\n",
+        "# input: 'midcentury modern' Output: chilly\n",
+        "# input: 'direct quote from famous book' Output: It could not provide\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IpQ0EqnB1MAJ"
+      },
+      "source": [
+        "(b) Now pick 3 queries that you could conventionally search in a search engine like a Google. Get the response from both ChatGPT and Google. Compare and contrast the results. What are the pros and cons of ChatGPT against traditional search engine?"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "M5UV26Vo1VlP"
+      },
+      "outputs": [],
+      "source": [
+        "#Query 1: What are the requirments for a 125 medical license in Illinois?\n",
+        "  #ChatGPT\n",
+        "    #Pros: It gives an okay general overview\n",
+        "    #Cons: The information was not complete and someone who is not careful will take this a accurate.\n",
+        "  #Google\n",
+        "    #Pros: It provided the direct source from the Illinois Department of Professional Regulation as the first option and provied local hospital's sites with specific deadlines and other pertinate information to thier instituttion's\n",
+        "    #Cons: There is no con here, but it would have been nice for preview of the required inforation on a right pane\n",
+        "\n",
+        "\n",
+        "#Query2: What are the best steps to become a machine learning engineer?\n",
+        "  #ChatGPT\n",
+        "    #Pros: It provided a little paragraph and then listed 7 steps with bullet points on what to do. This is great as it gets the information from the web and condenses the most common things one needs to do.\n",
+        "    #Cons: It would be great if it provided links and sources.\n",
+        "  #Google\n",
+        "    #Pros: It provided 2,050,000,000 results for sites with information from reputable universties, certificates, and a short list of 6 things to do.\n",
+        "    #Cons: There is no way someone will be able to look at all 2,050,000,000 results, the top results were sponsored options, and a lot of opinions from facts.\n",
+        "\n",
+        "\n",
+        "#Query3: What are the best steps for parents to save for their children's college education?\n",
+        "  #ChatGPT\n",
+        "    #Pros: It provided 10 options, and were bite sized bits of information which was easy to understand.\n",
+        "    #Cons: It was just general information and it didn't provide a reputable source for parents to reach out for more detailed information.\n",
+        "  #Google\n",
+        "    #Pros: It provided 203,000,000 results which contained different opinions to consider.\n",
+        "    #Cons: It was overwhelming to discern which inforamtion was from a reputable source. Espeically since there are unscrupulous people/businesses out there and knowing a few reputable companies will be beneficial."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Nprd0Fig1Wi9"
+      },
+      "source": [
+        "(c) Ask some technical, scientific, or professional topics about which you are experts. Ask 5 non-trivial questions and evaluate individual answers by ChatGPT against your own solutions. Report all the results and your overall impression"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "vLc6xKov1c2u"
+      },
+      "outputs": [],
+      "source": [
+        "#Q1 Accounting Question: INPUT: For accounting purposes, how do I record a twenty-year lease for a building where I will operate a store. The least payments are $10,000 per month. The building Is currently worth $1.8 million USD. The current discount rate is 6.9%\n",
+        "  #Using ChatGPT 3.5: OUTPUT: ChatGPT provided a correct step-by-step technical explanation including calculating the net present value of lease payments, provided the income statement and balance sheet considerations, provided the journal entries and gave the disclosure requirements.\n",
+        "  #Impression: ChatGPT was impressive in not only calculating new present value where required, it provided the journal entries and step-by-step instructions. This would be very helpful to an entry-level accountant. It was complete.\n",
+        "\n",
+        "#Q2 Medical Graduate Education Question: INPUT: What are the requirments for a 125 medical license in Illinois?\n",
+        "  # Using ChatGPT 3.5: OUTPUT: It gave basic general requirements Medcial Educaiton, Examination, English Language Proficiency, Postgraduate Traning Program, Applicaiton and Documentation, Fees, and Background Check\n",
+        "  # Impresssion: While it gave a good generalization, it was missing a few required items and for something that is required to start or continue training in Illinois. This could use more work, or provide a PDF or link to the exact requirements.\n",
+        "\n",
+        "#Q3 Accounting Question: INPUT: How do I account for the purchase of a new vehicle for a business?\n",
+        "  #Using ChatGPT 3.5: OUTPUT: ChatGPT provided a correct step-by-step technical guide including instructions for entering debits and credits in the general ledger to record the purchase, recording depreciation, and financial statement presentation.\n",
+        "  #Impression: The ChatGPT output was exteremely valuable to anybody with basic accounting skills. It would server as a refresher or even as a training for a new accountant. The material was complete.\n",
+        "\n",
+        "#Q4: Were all GME fellowships accredited by the ACGME in 2020?\n",
+        "  #Using ChatGPT 3.5: OUTPUT: In 2020, not all Graduate Medical Education (GME) fellowships were necessarily accredited by the Accreditation Council for Graduate Medical Education (ACGME). While many fellowship programs in the United States seek ACGME accreditation to ensure quality standards and eligibility for funding, there are still some non-ACGME accredited fellowship programs in existence.\n",
+        "  #Impression: This is accurate\n",
+        "\n",
+        "#Q5: How often must hospitals in Illinois check thier controlled substance inventories?\n",
+        "  #Using ChatGPT 3.5: OUTPUT: In Illinois, hospitals are required to maintain accurate records of controlled substances and conduct inventories at specified intervals. According to the Illinois Controlled Substances Act (720 ILCS 570), hospitals must conduct inventories of all Schedule II controlled substances at least every two years. Additionally, hospitals must conduct inventories of all Schedule III, IV, and V controlled substances at least every two years, but they may elect to conduct these inventories more frequently, such as annually.\n",
+        "  #Impression: This is accurate.\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "pnNek5tn1dJu"
+      },
+      "source": [
+        "(d) Large language models (including ChatGPT) do not always provide the best answers. As their responses are essentially generated (or sampled ), there could be undesirable content inside. Possibly harmful areas include toxic speeches, private information, and hallucination (i.e., incorrect information). Report your experience on these topics including real input-output examples. Feel free to reuse earlier results in (a)-(c). Feel free to try more if you need more."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "PysUV62u1oYE"
+      },
+      "outputs": [],
+      "source": [
+        "# In question 2 (b), if anyone used ChatGPT 3 to figure out what they needed to get thier required medical license to train in a residency/fellowship in Illinois, they would not get the complete requirments.\n",
+        "# This would cause a delay in thier training, which would affect the program by having thier peers pick up extra cases, and ultimately affect patient care."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "CEmL8B1d1oxn"
+      },
+      "source": [
+        "(e) Given all of your trials in Problem 2 so far, write a short essay with 2-3 paragraphs about the upcoming new era with large language models like ChatGPT. Ask ChatGPT to write the similar essay by carefully asking the question. (i.e., prompting) WHat are your final thoughts?"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "8CcQdbEP1tkt"
+      },
+      "outputs": [],
+      "source": [
+        "# Our Sentence:\n",
+        "#Large language models like ChatGPT are continually learning and improving as they process interactions and feedback from a growing number of users.\n",
+        "#This ongoing learning process enables these models to generate increasingly accurate and relevant outputs over time.\n",
+        "#However, the constant influx of new data also necessitates the development of more advanced computer systems and hardware capable of handling the increased storage and processing requirements.\n",
+        "#Effective management of this massive amount of data will be crucial to ensure that these language models continue to deliver improved performance without compromising on efficiency or speed.\n",
+        "#Therefore, ongoing technological advancements in hardware and infrastructure will be essential to accommodate the expanding capabilities of large language models in the future.\n",
+        "#While there have been significant advancements in computational technology, the rise of large language models also presents ethical challenges that will require the development of new laws and regulations.\n",
+        "#These measures will be necessary to ensure a balanced coexistence between humans and these advanced AI systems.\n",
+        "#Additionally, as the potential impact of large language models on daily life becomes more apparent, it is likely that governments will compete and potentially engage in intellectual property theft in an effort to establish dominance in this field.\n",
+        "#The interplay between technological development, ethical considerations, and global competition will undoubtedly be an intriguing aspect to watch unfold in the coming years.\n",
+        "\n",
+        "\n",
+        "# ChatGPT Sentense:\n",
+        "#As an AI language model, I can provide insights into the potential future of large language models (LLMs) based on current trends and developments in the field of artificial intelligence and natural language processing. Here are some thoughts on the future of LLMs:\n",
+        "#*Continued Advancements: Large language models have already made significant strides in natural language understanding and generation, and we can expect further advancements in their capabilities. Future LLMs may become even more sophisticated, with improved contextual understanding, better handling of ambiguity, and enhanced ability to generate human-like text.\n",
+        "#*Applications Across Industries: LLMs have diverse applications across various industries, including customer service, content generation, language translation, healthcare, and education. As LLM technology evolves, we can expect to see even more innovative applications and use cases emerge, transforming how we interact with technology and access information.\n",
+        "#*Ethical and Societal Implications: The growing capabilities of LLMs raise important ethical and societal considerations. Issues such as bias, misinformation, privacy, and the impact on employment are areas of concern that will need to be addressed as LLMs continue to advance. Responsible development and use of LLMs will be essential to mitigate potential risks and ensure positive outcomes for society.\n",
+        "#*Integration with Other Technologies: LLMs are likely to be integrated with other emerging technologies such as augmented reality (AR), virtual reality (VR), and the Internet of Things (IoT). This integration could enable more seamless and intuitive interactions with AI systems, leading to new opportunities for personalized experiences and enhanced productivity.\n",
+        "#*Research and Innovation: Ongoing research and innovation in the field of LLMs will drive further progress and breakthroughs. Collaboration between academia, industry, and other stakeholders will be crucial to address challenges and unlock the full potential of LLM technology.\n",
+        "#*Accessibility and Inclusivity: Efforts to democratize access to LLM technology will be important to ensure that benefits are accessible to everyone. This includes developing LLMs that support multiple languages and dialects, as well as addressing accessibility barriers for people with disabilities.\n",
+        "#Overall, the future of large language models holds great promise for transforming how we interact with and harness the power of language. However, it will be important to approach their development and deployment with careful consideration of ethical, societal, and technical considerations to maximize their positive impact.\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cyRAXrJZ1vbr"
+      },
+      "source": [
+        "# Problem 3: Application [75 points]\n",
+        "\n",
+        "Pick your open-ended project from one of the following three applications:\n",
+        "* Spell-checking (character-level N-gram language modeling)\n",
+        "* Auto-complete (word-level N-gram language modeling)\n",
+        "* Your own (possibly inspired by Problem 2)\n",
+        "\n",
+        "Brainstorm first the interface design. It could be with or without context. Also, it could be in the middle of typing or after finishing the typing. Your appoarch must be different based on which interface that your group adopts. Relying on your design decision, you could excitingly combine the ideas of character n-grams and word n-grams."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZlnZYC1F6zgn"
+      },
+      "source": [
+        "Character N-Gram Model Building for spell-checking model"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "n9RIdP5k2EGc",
+        "outputId": "9fe5c78f-d0db-420b-cbbd-65881782017d"
+      },
+      "outputs": [
+        {
+          "name": "stderr",
+          "output_type": "stream",
+          "text": [
+            "[nltk_data] Downloading package brown to /root/nltk_data...\n",
+            "[nltk_data]   Package brown is already up-to-date!\n"
+          ]
+        }
+      ],
+      "source": [
+        "import nltk\n",
+        "from nltk.corpus import brown\n",
+        "from collections import defaultdict\n",
+        "import math\n",
+        "\n",
+        "# Ensure the Brown corpus is downloaded\n",
+        "nltk.download('brown')\n",
+        "\n",
+        "# Load the sentences from the Brown corpus and build a dictionary of unique words\n",
+        "unique_words = set(word.lower() for sentence in brown.sents() for word in sentence)\n",
+        "\n",
+        "# Character-level trigram model building function\n",
+        "def build_char_ngram_model(text, n=3):\n",
+        "    model = defaultdict(lambda: defaultdict(int))\n",
+        "    for line in text:\n",
+        "        processed_line = ['<s>'] * (n-1) + list(' '.join(line)) + ['</s>']\n",
+        "        for i in range(len(processed_line) - n + 1):\n",
+        "            ngram = tuple(processed_line[i:i+n-1])\n",
+        "            next_char = processed_line[i+n-1]\n",
+        "            model[ngram][next_char] += 1\n",
+        "    for ngram_prefix in model:\n",
+        "        total_count = float(sum(model[ngram_prefix].values()))\n",
+        "        for char in model[ngram_prefix]:\n",
+        "            model[ngram_prefix][char] /= total_count\n",
+        "    return model"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kXi6svmUBISK"
+      },
+      "source": [
+        "Candidate generation with dictionary filtering"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "tmwVvkYfBQcG"
+      },
+      "outputs": [],
+      "source": [
+        "def edits1_dictionary(word, dictionary):\n",
+        "    letters = 'abcdefghijklmnopqrstuvwxyz'\n",
+        "    splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]\n",
+        "    deletes = [L + R[1:] for L, R in splits if R and L + R[1:] in dictionary]\n",
+        "    transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1 and L + R[1] + R[0] + R[2:] in dictionary]\n",
+        "    replaces = [L + c + R[1:] for L, R in splits if R for c in letters if L + c + R[1:] in dictionary]\n",
+        "    inserts = [L + c + R for L, R in splits for c in letters if L + c + R in dictionary]\n",
+        "    return set(deletes + transposes + replaces + inserts)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "RxLzKiGdBbbC"
+      },
+      "source": [
+        "Scoring function based on the character-level trigram model"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "EypjRwnOBb_S"
+      },
+      "outputs": [],
+      "source": [
+        "def score(word, model):\n",
+        "    probability = 1.0\n",
+        "    processed_word = ['<s>'] * 2 + list(word) + ['</s>']\n",
+        "    for i in range(len(processed_word) - 2):\n",
+        "        ngram = tuple(processed_word[i:i+2])\n",
+        "        char = processed_word[i+2]\n",
+        "        probability *= model[ngram].get(char, 1e-6)\n",
+        "    return probability"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "v_6m5u0XBl2D"
+      },
+      "source": [
+        "Correcting function using the model and dictionary"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "oNmM2c-0BmaQ"
+      },
+      "outputs": [],
+      "source": [
+        "def correct_with_dictionary(word, model, dictionary):\n",
+        "    candidates = edits1_dictionary(word, dictionary)\n",
+        "    if not candidates:  # If no candidates are found, return the original word\n",
+        "        return word\n",
+        "    corrected_word = max(candidates, key=lambda candidate: score(candidate, model))\n",
+        "    return corrected_word"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "AwpZ_9ceBtFT"
+      },
+      "source": [
+        "Example usage\n",
+        "Prepare the data"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "DmenRpqSBt4G"
+      },
+      "outputs": [],
+      "source": [
+        "split_index = int(len(brown.sents()) * 0.8)\n",
+        "D_train = [' '.join(sentence) for sentence in brown.sents()[:split_index]]\n",
+        "\n",
+        "# Build the character-level trigram model\n",
+        "char_trigram_model = build_char_ngram_model(D_train, n=3)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Nl4t3pYaB8Dd"
+      },
+      "source": [
+        "Attempt to correct a misspelled word"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ahrLdM1IB8lV",
+        "outputId": "9cb24d9e-7070-4a7c-b347-dcbfa8e1c2c3"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Corrected 'exampel' to 'example'\n"
+          ]
+        }
+      ],
+      "source": [
+        "misspelled_word = \"exampel\"  # Using the word Example for the misspelled word\n",
+        "correction = correct_with_dictionary(misspelled_word, char_trigram_model, unique_words)\n",
+        "print(f\"Corrected '{misspelled_word}' to '{correction}'\")"
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "collapsed_sections": [
+        "roR6J4YMypo6",
+        "88eUyfwQyw1h"
+      ],
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
