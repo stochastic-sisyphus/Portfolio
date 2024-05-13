@@ -72,12 +72,12 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 | [Housing_and_Phishing_Data_Analysis.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Housing_and_Phishing_Data_Analysis.Rmd) | R Markdown file for analyzing housing and phishing data. |
 | [Logistic_Regression_CIFAR10_Analysis.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/Logistic_Regression_CIFAR10_Analysis.ipynb) | Jupyter Notebook for analyzing the CIFAR-10 dataset using logistic regression. |
 | [Language_Modeling_Text_Analytics_project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/Language_Modeling_Text_Analytics_project.ipynb) | Jupyter Notebook for a text analytics project focused on language modeling. |
-| [PSID_Data_Scraping_Automation.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Data_Scraping_Automation.py) | Python script for automating data scraping, possibly related to PSID. |
+| [PSID_Data_Scraping_Automation.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Data_Scraping_Automation.py) | Python script for automating scraping PSID data. |
 | [Credit_Risk_Analysis.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Credit_Risk_Analysis.Rmd) | R Markdown file for analyzing credit risk. |
 | [LSTM_Text_Modeling_Project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/LSTM_Text_Modeling_Project.ipynb) | Jupyter Notebook for text modeling using LSTM (Long Short-Term Memory) neural networks. |
 | [Language_Modeling_Project.txt](https://github.com/josecuervo420/Portfolio/blob/master/Language_Modeling_Project.txt) | Text file related to a language modeling project. |
 | [Student_Placement_Prediction.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Student_Placement_Prediction.Rmd) | R Markdown file for predicting student placements. |
-| [PSID_Automatic_Data_Retrieval_Web_Driver.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Automatic_Data_Retrieval_Web_Driver.py) | Python script for automatic data retrieval using a web driver, likely for the Panel Study of Income Dynamics (PSID). |
+| [PSID_Automatic_Data_Retrieval_Web_Driver.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Automatic_Data_Retrieval_Web_Driver.py) | Python script for automatic data retrieval using a web driver for the Panel Study of Income Dynamics (PSID). |
 
 </details>
 
