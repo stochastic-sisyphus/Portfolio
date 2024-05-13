@@ -60,26 +60,27 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 
 ---
 
-##  Modules
+## Modules
 
 <details closed><summary>.</summary>
 
-| File                                                                                                                                                                          | Summary                         |
-| ---                                                                                                                                                                           | ---                             |
-| [deep_learning_language_project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/deep_learning_language_project.ipynb)                                           | <code>► INSERT-TEXT-HERE</code> |
-| [ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | <code>► INSERT-TEXT-HERE</code> |
-| [nltk_senses_embeddings.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/nltk_senses_embeddings.ipynb)                                                           | <code>► INSERT-TEXT-HERE</code> |
-| [Housing_and_Phishing_Data_Analysis.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Housing_and_Phishing_Data_Analysis.Rmd)                                       | <code>► INSERT-TEXT-HERE</code> |
-| [Logistic_Regression_CIFAR10_Analysis.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/Logistic_Regression_CIFAR10_Analysis.ipynb)                               | <code>► INSERT-TEXT-HERE</code> |
-| [Language_Modeling_Text_Analytics_project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/Language_Modeling_Text_Analytics_project.ipynb)                       | <code>► INSERT-TEXT-HERE</code> |
-| [PSID_Data_Scraping_Automation.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Data_Scraping_Automation.py)                                                   | <code>► INSERT-TEXT-HERE</code> |
-| [Credit_Risk_Analysis.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Credit_Risk_Analysis.Rmd)                                                                   | <code>► INSERT-TEXT-HERE</code> |
-| [LSTM_Text_Modeling_Project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/LSTM_Text_Modeling_Project.ipynb)                                                   | <code>► INSERT-TEXT-HERE</code> |
-| [Language_Modeling_Project.txt](https://github.com/josecuervo420/Portfolio/blob/master/Language_Modeling_Project.txt)                                                         | <code>► INSERT-TEXT-HERE</code> |
-| [Student_Placement_Prediction.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Student_Placement_Prediction.Rmd)                                                   | <code>► INSERT-TEXT-HERE</code> |
-| [PSID_Automatic_Data_Retrieval_Web_Driver.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Automatic_Data_Retrieval_Web_Driver.py)                             | <code>► INSERT-TEXT-HERE</code> |
+| File | Summary |
+| --- | --- |
+| [deep_learning_language_project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/deep_learning_language_project.ipynb) | Jupyter Notebook for a deep learning project focusing on language. |
+| [ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | Jupyter Notebook covering the basics of machine learning, backpropagation, and gradient descent. |
+| [nltk_senses_embeddings.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/nltk_senses_embeddings.ipynb) | Jupyter Notebook for working with embeddings in natural language processing using the NLTK library. |
+| [Housing_and_Phishing_Data_Analysis.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Housing_and_Phishing_Data_Analysis.Rmd) | R Markdown file for analyzing housing and phishing data. |
+| [Logistic_Regression_CIFAR10_Analysis.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/Logistic_Regression_CIFAR10_Analysis.ipynb) | Jupyter Notebook for analyzing the CIFAR-10 dataset using logistic regression. |
+| [Language_Modeling_Text_Analytics_project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/Language_Modeling_Text_Analytics_project.ipynb) | Jupyter Notebook for a text analytics project focused on language modeling. |
+| [PSID_Data_Scraping_Automation.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Data_Scraping_Automation.py) | Python script for automating data scraping, possibly related to PSID. |
+| [Credit_Risk_Analysis.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Credit_Risk_Analysis.Rmd) | R Markdown file for analyzing credit risk. |
+| [LSTM_Text_Modeling_Project.ipynb](https://github.com/josecuervo420/Portfolio/blob/master/LSTM_Text_Modeling_Project.ipynb) | Jupyter Notebook for text modeling using LSTM (Long Short-Term Memory) neural networks. |
+| [Language_Modeling_Project.txt](https://github.com/josecuervo420/Portfolio/blob/master/Language_Modeling_Project.txt) | Text file related to a language modeling project. |
+| [Student_Placement_Prediction.Rmd](https://github.com/josecuervo420/Portfolio/blob/master/Student_Placement_Prediction.Rmd) | R Markdown file for predicting student placements. |
+| [PSID_Automatic_Data_Retrieval_Web_Driver.py](https://github.com/josecuervo420/Portfolio/blob/master/PSID_Automatic_Data_Retrieval_Web_Driver.py) | Python script for automatic data retrieval using a web driver, likely for the Panel Study of Income Dynamics (PSID). |
 
 </details>
+
 
 ---
 
