@@ -11,10 +11,6 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 </p>
 <p align="center">
     <h1 align="center">PORTFOLIO</h1>
-</p>
-<p align="center">
-    <em><code>► INSERT-TEXT-HERE</code></em>
-</p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/josecuervo420/Portfolio?style=flat&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/josecuervo420/Portfolio?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
