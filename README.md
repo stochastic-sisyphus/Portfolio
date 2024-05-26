@@ -56,7 +56,7 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 
 ## Modules
 
-<details closed><summary>.</summary>
+<details closed><summary>Modulea</summary>
 
 | File | Summary |
 | --- | --- |
