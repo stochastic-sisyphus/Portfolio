@@ -1,4 +1,4 @@
-Vanessa Beck MSBA
+MSBA
 ----
 
 portfolio of my coding projects, ranging from econometrics, data analysis, data science, machine learning, to deep learning As a graduate student in Business Analytics, I'm proficient in a number of programming languages, with a particular affinity for Python. I have experience with data analysis and data science, statistical methods, machine learning, deep learning, amid other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications.
