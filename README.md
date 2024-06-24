@@ -67,6 +67,9 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 ---
 
 ## Modules
+
+Modules
+
 <details closed><summary>Modules</summary>
 File	Summary
 deep_learning_language_project.ipynb	Jupyter Notebook for a deep learning project focusing on language.
@@ -90,6 +93,5 @@ AI-Research-Synthesizer/agents/synthesizer.py	Synthesizer agent for extracting i
 AI-Research-Synthesizer/utils/nvidia_api.py	Utility functions for interacting with Nvidia API.
 AI-Research-Synthesizer/utils/text_processor.py	Utility functions for processing text.
 </details>
-
 
 ---
