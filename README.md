@@ -68,9 +68,8 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 
 ## Modules
 
-
-<details closed><summary>Modules</summary>
-
+<details>
+<summary>Modules</summary>
 | File | Summary |
 | --- | --- |
 | [deep_learning_language_project.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/deep_learning_language_project.ipynb) | Jupyter Notebook for a deep learning project focusing on language. |
