@@ -67,7 +67,6 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 ---
 
 ## Modules
-
 <details closed><summary>Modules</summary>
 File	Summary
 deep_learning_language_project.ipynb	Jupyter Notebook for a deep learning project focusing on language.
@@ -79,7 +78,6 @@ Language_Modeling_Text_Analytics_project.ipynb	Jupyter Notebook for a text analy
 PSID_Data_Scraping_Automation.py	Python script for automating scraping PSID data.
 Credit_Risk_Analysis.Rmd	R Markdown file for analyzing credit risk.
 LSTM_Text_Modeling_Project.ipynb	Jupyter Notebook for text modeling using LSTM (Long Short-Term Memory) neural networks.
-Language_Modeling_Project.txt	Text file related to a language modeling project.
 Student_Placement_Prediction.Rmd	R Markdown file for predicting student placements.
 PSID_Automatic_Data_Retrieval_Web_Driver.py	Python script for automatic data retrieval using a web driver for the Panel Study of Income Dynamics (PSID).
 AI-Research-Synthesizer/main.py	Main Python script for the AI Research Synthesizer project.
@@ -92,5 +90,6 @@ AI-Research-Synthesizer/agents/synthesizer.py	Synthesizer agent for extracting i
 AI-Research-Synthesizer/utils/nvidia_api.py	Utility functions for interacting with Nvidia API.
 AI-Research-Synthesizer/utils/text_processor.py	Utility functions for processing text.
 </details>
+
 
 ---
