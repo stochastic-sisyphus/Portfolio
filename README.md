@@ -66,9 +66,9 @@ portfolio of my coding projects, ranging from econometrics, data analysis, data 
 
 ---
 
-## Modules
+## Project Breakdown
 
-<details closed><summary>Modules</summary>
+<details closed><summary>Project Modules and Descriptions</summary>
 
 | File | Summary |
 | --- | --- |
