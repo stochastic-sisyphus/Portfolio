@@ -44,3 +44,7 @@ Enter a research topic when prompted. The system will gather information, proces
 ## Note
 
 This project uses the NVIDIA API and requires a valid API key to function. Ensure you have the necessary permissions and credits to use the API.
+
+
+## To view example outputs please see the photo pdf in this folder. 
+[View the PDF](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/Photo.pdf)
