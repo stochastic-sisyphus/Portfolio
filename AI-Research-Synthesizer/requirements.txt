@@ -1,4 +1,4 @@
-langchain==0.0.271
+langchain==0.2.3
 sqlalchemy==1.4.47
 requests==2.26.0
 nltk==3.6.3
