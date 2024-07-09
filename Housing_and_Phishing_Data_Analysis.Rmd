@@ -49,7 +49,7 @@ print(paste("Test MSE: ", round(mse, 2)))
 
 ## Phishing 
 
-phishing_data <- read.arff("/Users/student/Desktop/PAST SEMS/FALL 23/IDS 572/hw/Training Dataset.arff")
+phishing_data <- read.arff("/file/path")
 print(sum(is.na(phishing_data)))
 phishing_data <- na.omit(phishing_data)
 
