@@ -20,7 +20,7 @@ library(foreign)
 
 ## Housing 
 
-housing_data <- read.csv("/Users/student/Desktop/PAST SEMS/FALL 23/IDS 572/hw/housing.csv")
+housing_data <- read.csv("/file/path")
 
 na_count <- sapply(housing_data, function(y) sum(is.na(y)))
 print(paste("NA counts:", na_count))
