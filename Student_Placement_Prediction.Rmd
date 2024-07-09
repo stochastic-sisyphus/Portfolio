@@ -1,7 +1,4 @@
 ---
-title: "Beck_Vanessa_Assignment3"
-author: "beck"
-date: "2023-11-15"
 output:
   pdf_document: default
   html_document: default
@@ -15,7 +12,7 @@ library(rpart)
 ```
 
 ```{r}
-data <- read_excel("/Users/student/Desktop/PAST SEMS/FALL 23/IDS 572/hw/IMB485-XLS-ENG.xlsx")
+data <- read_excel("/file/path")
 ```
 
 # (2)
