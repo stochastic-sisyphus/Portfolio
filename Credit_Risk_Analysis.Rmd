@@ -1,7 +1,4 @@
 ---
-title: "Beck_Assignment1"
-author: "beck"
-date: "2023-09-29"
 output: html_document
 ---
 
@@ -17,7 +14,7 @@ library(dplyr)
 ```
 
 ```{r}
-data <- read_excel("/Users/student/Desktop/FALL 23/IDS 572/hw/German Credit.xls")
+data <- read_excel("/file/path")
 head(data$RESPONSE)
 table(data$RESPONSE)
 
