@@ -1,1 +1,4 @@
+# Ignore the replace_personal_paths.py script
+replace_personal_paths.py
+
 __pycache__/
