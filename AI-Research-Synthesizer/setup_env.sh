@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Navigate to the project directory
-cd /Users/student/Desktop/SUMMER24/synth_proj
+cd /path
 
 # Activate the virtual environment
-source fresh_project_env/bin/activate
+source pathenv/bin/activate
 
 # Ensure all dependencies are installed
 pip install -r requirements.txt
