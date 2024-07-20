@@ -3,16 +3,17 @@ MSBA
 
 Portfolio of my coding projects, ranging from econometrics, data analysis, data science, machine learning, to deep learning As a graduate student in Business Analytics, I'm proficient in a number of programming languages, with a particular affinity for Python. I have experience with data analysis and data science, statistical methods, machine learning, deep learning, amid other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications.
 
-### Skills and Technologies
+## Skills and Technologies
 
-Programming Languages: Python, R, SQL
-Data Analysis Tools: Jupyter Notebook, RStudio
-Machine Learning Libraries: TensorFlow, PyTorch, scikit-learn
-Database Management: PostgreSQL, MySQL, MongoDB
-Cloud Platforms: Google Cloud Platform (GCP), Amazon Web Services (AWS)
-Development Tools: Docker, VS Code
-Other Tools: Git, Firebase, Tableau
+- **Programming Languages:** Python, R, SQL
+- **Data Analysis Tools:** Jupyter Notebook, RStudio
+- **Machine Learning Libraries:** TensorFlow, PyTorch, scikit-learn
+- **Database Management:** PostgreSQL, MySQL, MongoDB
+- **Cloud Platforms:** Google Cloud Platform (GCP), Amazon Web Services (AWS)
+- **Development Tools:** Docker, VS Code
+- **Other Tools:** Git, Firebase, Tableau
 
+  
 ## Quick Links
 
 - [Repository Structure](#repository-structure)
