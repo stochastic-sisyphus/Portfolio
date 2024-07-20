@@ -26,11 +26,11 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 </p>
 <hr>
 
-##  Quick Links
+## Quick Links
 
-> - [ Repository Structure](#-repository-structure)
-> - [ Modules](#-modules)
-> - [ About Me](#-about-me)
+- [Repository Structure](#repository-structure)
+- [Project Breakdown](#project-breakdown)
+- [About Me](#about-me)
 
 ---
 
