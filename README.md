@@ -98,8 +98,7 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 ## About Me
 
 <details closed><summary>Click to Expand</summary>
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
+	
 <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="vanessa-b-189958196" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/vanessa-b-189958196?trk=profile-badge">Vanessa B.</a></div>
 </details>
 
