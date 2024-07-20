@@ -30,6 +30,7 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 
 > - [ Repository Structure](#-repository-structure)
 > - [ Modules](#-modules)
+> - [ About Me](#-about-me)
 
 ---
 
