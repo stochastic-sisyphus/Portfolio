@@ -86,7 +86,7 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 | [Docs/Data Science Guide.pdf](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Docs/Data%20Science%20Guide%20.pdf) | A comprehensive guide covering various data science concepts, methodologies, and practical applications. |
 
 </details>
----
+
 
 ## Docs
 
