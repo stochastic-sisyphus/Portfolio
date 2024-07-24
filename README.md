@@ -26,34 +26,34 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 ##  Repository Structure
 
 ```sh
-└── Portfolio/
-    ├── AI-Research-Synthesizer/
-    │   ├── README.md
-    │   ├── main.py
-    │   ├── config.py
-    │   ├── requirements.txt
-    │   ├── setup_env.sh
-    │   ├── agents/
-    │   │   ├── researcher.py
-    │   │   └── synthesizer.py
-    │   ├── utils/
-    │   │   ├── nvidia_api.py
-    │   │   └── text_processor.py
-    ├── Docs/
-    │ ├── Data Science Guide.pdf
-    ├── Credit_Risk_Analysis.Rmd
-    ├── Housing_and_Phishing_Data_Analysis.Rmd
-    ├── LSTM_Text_Modeling_Project.ipynb
-    ├── Language_Modeling_Project.txt
-    ├── Language_Modeling_Text_Analytics_project.ipynb
-    ├── Logistic_Regression_CIFAR10_Analysis.ipynb
-    ├── ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb
-    ├── PSID_Automatic_Data_Retrieval_Web_Driver.py
-    ├── PSID_Data_Scraping_Automation.py
-    ├── README.md
-    ├── Student_Placement_Prediction.Rmd
-    ├── deep_learning_language_project.ipynb
-    └── nltk_senses_embeddings.ipynb
+Portfolio/
+├── AI-Research-Synthesizer/
+│   ├── README.md
+│   ├── main.py
+│   ├── config.py
+│   ├── requirements.txt
+│   ├── setup_env.sh
+│   ├── agents/
+│   │   ├── researcher.py
+│   │   └── synthesizer.py
+│   ├── utils/
+│   │   ├── nvidia_api.py
+│   │   └── text_processor.py
+├── Docs/
+│   ├── Data Science Guide.pdf
+├── Credit_Risk_Analysis.Rmd
+├── Housing_and_Phishing_Data_Analysis.Rmd
+├── LSTM_Text_Modeling_Project.ipynb
+├── Language_Modeling_Project.txt
+├── Language_Modeling_Text_Analytics_project.ipynb
+├── Logistic_Regression_CIFAR10_Analysis.ipynb
+├── ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb
+├── PSID_Automatic_Data_Retrieval_Web_Driver.py
+├── PSID_Data_Scraping_Automation.py
+├── README.md
+├── Student_Placement_Prediction.Rmd
+├── deep_learning_language_project.ipynb
+└── nltk_senses_embeddings.ipynb
 ```
 
 ---
