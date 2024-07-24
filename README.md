@@ -40,7 +40,8 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
     │   │   ├── nvidia_api.py
     │   │   └── text_processor.py
     ├── Docs/
-    │ ├── Data Science Guide.pdf    ├── Credit_Risk_Analysis.Rmd
+    │ ├── Data Science Guide.pdf
+    ├── Credit_Risk_Analysis.Rmd
     ├── Housing_and_Phishing_Data_Analysis.Rmd
     ├── LSTM_Text_Modeling_Project.ipynb
     ├── Language_Modeling_Project.txt
