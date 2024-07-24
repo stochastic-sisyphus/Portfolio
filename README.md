@@ -91,7 +91,7 @@ Portfolio/
 
 ## Docs
 
-This section contains a collection of technical documents and guides authored by me, Vanessa. These docs cover a range of data science topics, providing in-depth knowledge, practical tips, and valuable insights.
+This section contains a collection of technical documents and guides authored by me. These docs cover a range of data science topics, providing in-depth knowledge, practical tips, and valuable insights.
 
 - [Data Science Guide](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Docs/Data%20Science%20Guide%20.pdf): A comprehensive guide covering various data science concepts, methodologies, and practical applications.
 
