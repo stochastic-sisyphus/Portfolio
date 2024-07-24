@@ -18,6 +18,7 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 
 - [Repository Structure](#repository-structure)
 - [Project Breakdown](#project-breakdown)
+- [Docs](#docs)
 - [About Me](#about-me)
 
 ---
@@ -38,7 +39,8 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
     │   ├── utils/
     │   │   ├── nvidia_api.py
     │   │   └── text_processor.py
-    ├── Credit_Risk_Analysis.Rmd
+    ├── Docs/
+    │ ├── Data Science Guide.pdf    ├── Credit_Risk_Analysis.Rmd
     ├── Housing_and_Phishing_Data_Analysis.Rmd
     ├── LSTM_Text_Modeling_Project.ipynb
     ├── Language_Modeling_Project.txt
@@ -81,8 +83,18 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 | [AI-Research-Synthesizer/agents/synthesizer.py](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/agents/synthesizer.py) | Synthesizer agent for extracting insights from research papers. |
 | [AI-Research-Synthesizer/utils/nvidia_api.py](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/utils/nvidia_api.py) | Utility functions for interacting with Nvidia API. |
 | [AI-Research-Synthesizer/utils/text_processor.py](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/utils/text_processor.py) | Utility functions for processing text. |
+| [Docs/Data Science Guide.pdf](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Docs/Data%20Science%20Guide%20.pdf) | A comprehensive guide covering various data science concepts, methodologies, and practical applications. |
 
 </details>
+---
+
+## Docs
+
+This section contains a collection of technical documents and guides authored by me, Vanessa. These docs cover a range of data science topics, providing in-depth knowledge, practical tips, and valuable insights.
+
+- [Data Science Guide](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Docs/Data%20Science%20Guide%20.pdf): A comprehensive guide covering various data science concepts, methodologies, and practical applications.
+
+---
 
 ## About Me
 
