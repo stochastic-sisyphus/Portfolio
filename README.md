@@ -85,6 +85,8 @@ Portfolio/
 | [AI-Research-Synthesizer/utils/nvidia_api.py](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/utils/nvidia_api.py) | Utility functions for interacting with Nvidia API. |
 | [AI-Research-Synthesizer/utils/text_processor.py](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/utils/text_processor.py) | Utility functions for processing text. |
 | [Docs/Data Science Guide.pdf](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Docs/Data%20Science%20Guide%20.pdf) | A comprehensive guide covering various data science concepts, methodologies, and practical applications. |
+| [github-repo-analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer) | A tool for analyzing GitHub repositories starred by a specific user. It provides insights such as language distribution, star growth over time, and interesting repositories based on various metrics. |
+
 
 </details>
 
