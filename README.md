@@ -71,7 +71,6 @@ Portfolio/
 │   ├── utils/
 │   │   ├── nvidia_api.py
 │   │   └── text_processor.py
-└── style.css
 
 ```
 
