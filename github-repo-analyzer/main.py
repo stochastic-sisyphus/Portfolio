@@ -103,16 +103,33 @@ def generate_markdown_summary(df):
     return markdown
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+    def serve_file(self, filename, content_type):
+        with open(filename, 'rb') as file:
+            self.send_response(200)
+            self.send_header('Content-type', content_type)
+            self.end_headers()
+            self.wfile.write(file.read())
+
     def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(b'''
-        <form method="post">
-            <input type="text" name="username" placeholder="Enter GitHub username">
-            <input type="submit" value="Analyze">
-        </form>
-        ''')
+        if self.path == '/styles.css':
+            self.serve_file('styles.css', 'text/css')
+        else:
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b'''
+            <html>
+            <head>
+                <link rel="stylesheet" type="text/css" href="/styles.css">
+            </head>
+            <body>
+                <form method="post">
+                    <input type="text" name="username" placeholder="Enter GitHub username">
+                    <input type="submit" value="Analyze">
+                </form>
+            </body>
+            </html>
+            ''')
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
@@ -154,19 +171,26 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/html')
         self.end_headers()
         self.wfile.write(f'''
-        <h1>GitHub Repo Analyzer Results for {username}</h1>
-        <h2>Top 5 starred repositories</h2>
-        {top_repos}
-        <h2>Language Distribution</h2>
-        <img src="data:image/png;base64,{img_lang_url}">
-        <h2>Cumulative Stars Over Time</h2>
-        <img src="data:image/png;base64,{img_stars_url}">
-        <h2>Top 10 Topics</h2>
-        {top_topics}
-        <h2>Suggested interesting repositories</h2>
-        {interesting_repos}
-        <h2>Markdown Summary</h2>
-        <textarea rows="10" cols="50">{markdown_summary}</textarea>
+        <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="/styles.css">
+        </head>
+        <body>
+            <h1>GitHub Repo Analyzer Results for {username}</h1>
+            <h2>Top 5 starred repositories</h2>
+            {top_repos}
+            <h2>Language Distribution</h2>
+            <img src="data:image/png;base64,{img_lang_url}">
+            <h2>Cumulative Stars Over Time</h2>
+            <img src="data:image/png;base64,{img_stars_url}">
+            <h2>Top 10 Topics</h2>
+            {top_topics}
+            <h2>Suggested interesting repositories</h2>
+            {interesting_repos}
+            <h2>Markdown Summary</h2>
+            <textarea rows="10" cols="50">{markdown_summary}</textarea>
+        </body>
+        </html>
         '''.encode('utf-8'))
 
 def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8080):
