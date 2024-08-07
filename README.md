@@ -41,6 +41,11 @@ Portfolio/
 │   │   └── text_processor.py
 ├── Docs/
 │   ├── Data Science Guide.pdf
+├── admin/
+│   ├── index.html
+│   ├── projects.html
+│   ├── script.js
+│   ├── style.css
 ├── Credit_Risk_Analysis.Rmd
 ├── Housing_and_Phishing_Data_Analysis.Rmd
 ├── LSTM_Text_Modeling_Project.ipynb
@@ -67,6 +72,7 @@ Portfolio/
 │   │   ├── nvidia_api.py
 │   │   └── text_processor.py
 └── style.css
+
 ```
 
 ---
