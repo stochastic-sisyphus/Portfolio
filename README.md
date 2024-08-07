@@ -36,42 +36,41 @@ Portfolio/
 │   ├── agents/
 │   │   ├── researcher.py
 │   │   └── synthesizer.py
-│   ├── utils/
-│   │   ├── nvidia_api.py
-│   │   └── text_processor.py
+│   └── utils/
+│       ├── nvidia_api.py
+│       └── text_processor.py
 ├── Docs/
-│   ├── Data Science Guide.pdf
+│   └── Data Science Guide.pdf
 ├── admin/
 │   ├── index.html
 │   ├── projects.html
 │   ├── script.js
-│   ├── style.css
+│   └── style.css
+├── github-repo-analyzer/
+│   ├── README.md
+│   ├── main.py
+│   ├── config.py
+│   ├── requirements.txt
+│   ├── setup_env.sh
+│   ├── agents/
+│   │   ├── researcher.py
+│   │   └── synthesizer.py
+│   └── utils/
+│       ├── nvidia_api.py
+│       └── text_processor.py
 ├── Credit_Risk_Analysis.Rmd
 ├── Housing_and_Phishing_Data_Analysis.Rmd
 ├── LSTM_Text_Modeling_Project.ipynb
 ├── Language_Modeling_Project.txt
-├── Language_Modeling_Text_Analytics_project.ipynb
+├── Language_Modeling_Text_Analytics_project.ip
 ├── Logistic_Regression_CIFAR10_Analysis.ipynb
-├── ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb
+├── ML_Basics_with_Backpropagation_and_Gradient
 ├── PSID_Automatic_Data_Retrieval_Web_Driver.py
 ├── PSID_Data_Scraping_Automation.py
 ├── README.md
 ├── Student_Placement_Prediction.Rmd
 ├── deep_learning_language_project.ipynb
-├── nltk_senses_embeddings.ipynb
-└── github-repo-analyzer/
-    ├── README.md
-    ├── main.py
-    ├── config.py
-    ├── requirements.txt
-    ├── setup_env.sh
-    ├── agents/
-    │   ├── researcher.py
-    │   └── synthesizer.py
-    └── utils/
-        ├── nvidia_api.py
-        └── text_processor.py
-
+└── nltk_senses_embeddings.ipynb
 ```
 
 ---
