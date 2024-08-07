@@ -53,7 +53,20 @@ Portfolio/
 ├── README.md
 ├── Student_Placement_Prediction.Rmd
 ├── deep_learning_language_project.ipynb
-└── nltk_senses_embeddings.ipynb
+├── nltk_senses_embeddings.ipynb
+├── github-repo-analyzer/
+│   ├── README.md
+│   ├── main.py
+│   ├── config.py
+│   ├── requirements.txt
+│   ├── setup_env.sh
+│   ├── agents/
+│   │   ├── researcher.py
+│   │   └── synthesizer.py
+│   ├── utils/
+│   │   ├── nvidia_api.py
+│   │   └── text_processor.py
+└── style.css
 ```
 
 ---
@@ -64,6 +77,7 @@ Portfolio/
 
 | File | Summary |
 | --- | --- |
+| [github-repo-analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer) | A tool for analyzing GitHub repositories starred by a specific user. It provides insights such as language distribution, star growth over time, and interesting repositories based on various metrics. |
 | [deep_learning_language_project.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/deep_learning_language_project.ipynb) | Jupyter Notebook for a deep learning project focusing on language. |
 | [ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | Jupyter Notebook covering the basics of machine learning, backpropagation, and gradient descent. |
 | [nltk_senses_embeddings.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/nltk_senses_embeddings.ipynb) | Jupyter Notebook for working with embeddings in natural language processing using the NLTK library. |
@@ -85,7 +99,6 @@ Portfolio/
 | [AI-Research-Synthesizer/utils/nvidia_api.py](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/utils/nvidia_api.py) | Utility functions for interacting with Nvidia API. |
 | [AI-Research-Synthesizer/utils/text_processor.py](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/utils/text_processor.py) | Utility functions for processing text. |
 | [Docs/Data Science Guide.pdf](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Docs/Data%20Science%20Guide%20.pdf) | A comprehensive guide covering various data science concepts, methodologies, and practical applications. |
-| [github-repo-analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer) | A tool for analyzing GitHub repositories starred by a specific user. It provides insights such as language distribution, star growth over time, and interesting repositories based on various metrics. |
 
 
 </details>
