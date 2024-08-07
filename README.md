@@ -59,18 +59,18 @@ Portfolio/
 ├── Student_Placement_Prediction.Rmd
 ├── deep_learning_language_project.ipynb
 ├── nltk_senses_embeddings.ipynb
-├── github-repo-analyzer/
-│   ├── README.md
-│   ├── main.py
-│   ├── config.py
-│   ├── requirements.txt
-│   ├── setup_env.sh
-│   ├── agents/
-│   │   ├── researcher.py
-│   │   └── synthesizer.py
-│   ├── utils/
-│   │   ├── nvidia_api.py
-│   │   └── text_processor.py
+└── github-repo-analyzer/
+    ├── README.md
+    ├── main.py
+    ├── config.py
+    ├── requirements.txt
+    ├── setup_env.sh
+    ├── agents/
+    │   ├── researcher.py
+    │   └── synthesizer.py
+    └── utils/
+        ├── nvidia_api.py
+        └── text_processor.py
 
 ```
 
