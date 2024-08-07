@@ -28,30 +28,30 @@ Portfolio of my coding projects, ranging from econometrics, data analysis, data 
 ```sh
 Portfolio/
 ├── AI-Research-Synthesizer/
-│   ├── README.md
-│   ├── main.py
-│   ├── config.py
-│   ├── requirements.txt
-│   ├── setup_env.sh
 │   ├── agents/
+│   │   ├── __init__.py
 │   │   ├── researcher.py
 │   │   └── synthesizer.py
-│   └── utils/
-│       ├── nvidia_api.py
-│       └── text_processor.py
-├── Docs/
-│   └── Data Science Guide.pdf
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── nvidia_api.py
+│   │   └── text_processor.py
+│   ├── Photo.pdf
+│   ├── README.md
+│   ├── config.py
+│   ├── main.py
+│   ├── requirements.txt
+│   └── setup_env.sh
+├── github-repo-analyzer/
+│   ├── main.py
+│   ├── readme.md
+│   ├── requirements.txt
+│   └── styles.css
 ├── admin/
 │   ├── index.html
 │   ├── projects.html
 │   ├── script.js
 │   └── style.css
-├── github-repo-analyzer/
-│   ├── README.md
-│   ├── main.py
-│   ├── config.py
-│   ├── requirements.txt
-│   └── setup_env.sh
 ├── Credit_Risk_Analysis.Rmd
 ├── Housing_and_Phishing_Data_Analysis.Rmd
 ├── LSTM_Text_Modeling_Project.ipynb
