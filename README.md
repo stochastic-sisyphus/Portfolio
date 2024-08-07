@@ -51,13 +51,7 @@ Portfolio/
 │   ├── main.py
 │   ├── config.py
 │   ├── requirements.txt
-│   ├── setup_env.sh
-│   ├── agents/
-│   │   ├── researcher.py
-│   │   └── synthesizer.py
-│   └── utils/
-│       ├── nvidia_api.py
-│       └── text_processor.py
+│   └── setup_env.sh
 ├── Credit_Risk_Analysis.Rmd
 ├── Housing_and_Phishing_Data_Analysis.Rmd
 ├── LSTM_Text_Modeling_Project.ipynb
