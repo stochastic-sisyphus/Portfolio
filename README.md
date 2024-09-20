@@ -42,6 +42,10 @@ Portfolio/
 │   ├── main.py
 │   ├── requirements.txt
 │   └── setup_env.sh
+├── Web Summarizer/
+│   ├── README.md
+│   ├── url_summarizer.py
+│   └── requirements.txt
 ├── github-repo-analyzer/
 │   ├── main.py
 │   ├── readme.md
@@ -76,7 +80,7 @@ Portfolio/
 | File | Summary |
 | --- | --- |
 | [github-repo-analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer) | A tool for analyzing GitHub repositories starred by a specific user. It provides insights such as language distribution, star growth over time, and interesting repositories based on various metrics. |
-| [deep_learning_language_project.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/deep_learning_language_project.ipynb) | Jupyter Notebook for a deep learning project focusing on language. |
+| [Web Summarizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/Web%20Summarizer) | A Python tool for summarizing content from multiple URLs using OpenAI API. Handles 403 errors with rotating user agents. || [deep_learning_language_project.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/deep_learning_language_project.ipynb) | Jupyter Notebook for a deep learning project focusing on language. |
 | [ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | Jupyter Notebook covering the basics of machine learning, backpropagation, and gradient descent. |
 | [nltk_senses_embeddings.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/nltk_senses_embeddings.ipynb) | Jupyter Notebook for working with embeddings in natural language processing using the NLTK library. |
 | [Housing_and_Phishing_Data_Analysis.Rmd](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Housing_and_Phishing_Data_Analysis.Rmd) | R Markdown file for analyzing housing and phishing data. |
