@@ -44,8 +44,7 @@ Portfolio/
 │   └── setup_env.sh
 ├── Web Summarizer/
 │   ├── README.md
-│   ├── url_summarizer.py
-│   └── requirements.txt
+│   └── url_summarizer.py
 ├── github-repo-analyzer/
 │   ├── main.py
 │   ├── readme.md
