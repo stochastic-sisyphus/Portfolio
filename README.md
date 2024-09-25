@@ -18,7 +18,6 @@ Majority are personal projects or from undergrad + grad school. Stop reading! Se
 
 - [Repository Structure](#repository-structure)
 - [Project Breakdown](#project-breakdown)
-- [Docs](#docs)
 - [About Me](#about-me)
 
 ---
