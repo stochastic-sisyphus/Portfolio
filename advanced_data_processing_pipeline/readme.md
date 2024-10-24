@@ -5,6 +5,8 @@ This project implements a sophisticated data processing pipeline using Python, d
 
 This package is available on PyPI, and you can view it at the provided URL: [https://pypi.org/project/advanced-data-processing/0.1.0/](https://pypi.org/project/advanced-data-processing/0.1.0/).
 
+[![PyPI version](https://badge.fury.io/py/advanced-data-processing.svg)](https://badge.fury.io/py/advanced-data-processing)
+
 ## Features
 
 - Flexible data loading from various sources (CSV, Excel, JSON, Parquet, SQL databases, APIs, S3)
@@ -39,6 +41,14 @@ See `requirements.txt` for a full list of dependencies. Key libraries include:
 - imbalanced-learn
 
 ## Installation
+
+You can install the package directly from PyPI:
+
+```bash
+pip install advanced-data-processing
+```
+
+Alternatively, if you are working from a local clone of the repository:
 
 Install the required dependencies:
 
