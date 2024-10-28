@@ -149,8 +149,6 @@ Portfolio/
 
 ## Project Breakdown
 
-<details closed><summary>Project Modules and Descriptions</summary>
-
 | File/Directory                                             | Summary                                                                                         |
 |------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb  | A Jupyter notebook explaining machine learning fundamentals, specifically focusing on backpropagation and gradient descent. |
@@ -168,14 +166,10 @@ Portfolio/
 | Advanced Data Processing Pipeline                          | A comprehensive data processing package that supports data transformation, feature engineering, model evaluation, and various other tasks for data preparation and analysis. |
 | AI-Research-Synthesizer                                    | A project focused on synthesizing AI research, including tools for text processing and integrations with Nvidia APIs. |
 
-</details>
-
 ---
 
 ## About Me
-<details closed><summary>Click to Expand</summary>
 
 [Medium](https://medium.com/@Stochastic-Sisyphus) | [LinkedIn](https://www.linkedin.com/in/vanessa-b-189958196)
 
-</details>
 ---
