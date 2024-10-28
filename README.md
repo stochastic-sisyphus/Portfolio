@@ -1,4 +1,5 @@
 MSBA
+
 ----
 Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, amid other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications.
 Majority are personal projects or from undergrad + grad school. Stop reading! Seriously! Draft** 
