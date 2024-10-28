@@ -1,8 +1,7 @@
-
 # MSBA
 
 ----
-Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, and other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications. The majority are personal projects or from undergrad and grad school. Stop reading! Seriously! Draft**
+Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, and other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications. The majority are personal projects or from undergrad and grad school.
 
 ![Alt text](SSSourceCode.png)
 
@@ -28,6 +27,10 @@ Portfolio adjacent. This is a collection of data analysis and data science, stat
 ## Highlights
 
 - [Advanced Data Processing Pipeline](https://github.com/stochastic-sisyphus/Portfolio/tree/main/advanced_data_processing_pipeline)
+- [AI-Powered Research Synthesizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/AI-Research-Synthesizer)
+- [Web Summarizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/Web%20Summarizer)
+- [GitHub Repo Analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer)
+- [WebWeave](https://github.com/stochastic-sisyphus/Portfolio/tree/main/WebWeave)
 
 ---
 
@@ -165,9 +168,7 @@ Portfolio/
 | [Admin](https://github.com/stochastic-sisyphus/Portfolio/tree/main/admin)                                                      | Python scripts for administrative tasks, including automation and management.                    |
 | [GitHub-Repo-Analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer)                                       | Analyzes GitHub repositories and provides insights on starred repositories.                      |
 | [Advanced Data Processing Pipeline](https://github.com/stochastic-sisyphus/Portfolio/tree/main/advanced_data_processing_pipeline)                          | Comprehensive data processing package for transformation, feature engineering, and evaluation.   |
-| [AI-Research-Synthesizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/AI-Research-Synthesizer)                                    | Synthesizes AI research and
-
- integrates text processing with Nvidia APIs.                         |
+| [AI-Research-Synthesizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/AI-Research-Synthesizer)                                    | Synthesizes AI research and integrates text processing with Nvidia APIs.                         |
 
 ---
 
