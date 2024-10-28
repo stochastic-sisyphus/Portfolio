@@ -72,3 +72,15 @@ This application is deployed on Replit. To deploy your own instance:
 1. Fork this repository to your Replit account
 2. Set up the `GITHUB_TOKEN` secret in your Replit project
 3. Click the "Run" button in Replit
+
+## Recent Updates
+
+- Updated the caching mechanism to improve performance
+- Enhanced the text summarization algorithm for better accuracy
+- Improved the visualization of cumulative stars over time
+
+## Additional Information
+
+- The application now includes a caching mechanism to reduce the number of API calls and improve performance.
+- The text summarization algorithm has been enhanced to provide more accurate summaries of repository README files.
+- The visualization of cumulative stars over time has been improved for better clarity and understanding.

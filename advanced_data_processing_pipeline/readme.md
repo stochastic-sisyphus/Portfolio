@@ -1,4 +1,3 @@
-##
 # Advanced Data Processing Pipeline
 
 This project implements a sophisticated data processing pipeline using Python, designed to handle large-scale data processing tasks efficiently. The pipeline includes various stages such as data loading, cleaning, transformation, analysis, and visualization.
