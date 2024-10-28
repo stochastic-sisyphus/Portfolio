@@ -147,7 +147,7 @@ Portfolio/
 
 ---
 
-## Project Breakdown
+## Project Breakdown 
 
 | File/Directory                                             | Summary                                                                                         |
 |------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -171,5 +171,3 @@ Portfolio/
 ## About Me
 
 [Medium](https://medium.com/@Stochastic-Sisyphus) | [LinkedIn](https://www.linkedin.com/in/vanessa-b-189958196)
-
----
