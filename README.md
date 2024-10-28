@@ -145,26 +145,28 @@ Portfolio/
 │       ├── text_processor.py
 │       └── nvidia_api.py
 
-Project Breakdown
+---
+
+## Project Breakdown
 
 <details closed><summary>Project Modules and Descriptions</summary>
 
-
-File/Directory	Summary
-ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb	A Jupyter notebook explaining machine learning fundamentals, specifically focusing on backpropagation and gradient descent.
-Log_Reg_CIFAR10_Analysis.ipynb	Analysis using logistic regression on the CIFAR-10 dataset, exploring image classification.
-DeepLearningLangProj_NormalizationTranslation.ipynb	A notebook on deep learning for language projects, covering tasks such as normalization and translation.
-Language_Modeling_Text_Analytics.ipynb	Jupyter notebook involving text analytics with language modeling techniques.
-LSTM_Text_Modeling.ipynb	Notebook focusing on text modeling using Long Short-Term Memory (LSTM) neural networks.
-Web Summarizer	A Python tool for summarizing web content from a given URL, with a corresponding README.
-Web Scraping	Scripts for automating data scraping from the Panel Study of Income Dynamics (PSID).
-Docs	Contains the Data Science Guide.pdf for data science methodologies and powertools.md for related documentation.
-Earlier Work	Older projects, including R markdown files for predicting student placements, analyzing housing/phishing data, and credit risk.
-WebWeave	A web application built using modern frontend tools like Vite, Tailwind, and TypeScript.
-Admin	Python scripts for administrative tasks, including automation tools and management scripts.
-GitHub-Repo-Analyzer	Scripts for analyzing GitHub repositories and generating insights from starred repositories.
-Advanced Data Processing Pipeline	A comprehensive data processing package that supports data transformation, feature engineering, model evaluation, and various other tasks for data preparation and analysis.
-AI-Research-Synthesizer	A project focused on synthesizing AI research, including tools for text processing and integrations with Nvidia APIs.
+| File/Directory                                             | Summary                                                                                         |
+|------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb  | A Jupyter notebook explaining machine learning fundamentals, specifically focusing on backpropagation and gradient descent. |
+| Log_Reg_CIFAR10_Analysis.ipynb                             | Analysis using logistic regression on the CIFAR-10 dataset, exploring image classification.      |
+| DeepLearningLangProj_NormalizationTranslation.ipynb        | A notebook on deep learning for language projects, covering tasks such as normalization and translation. |
+| Language_Modeling_Text_Analytics.ipynb                     | Jupyter notebook involving text analytics with language modeling techniques.                     |
+| LSTM_Text_Modeling.ipynb                                   | Notebook focusing on text modeling using Long Short-Term Memory (LSTM) neural networks.          |
+| Web Summarizer                                             | A Python tool for summarizing web content from a given URL, with a corresponding README.         |
+| Web Scraping                                               | Scripts for automating data scraping from the Panel Study of Income Dynamics (PSID).             |
+| Docs                                                       | Contains the Data Science Guide.pdf for data science methodologies and powertools.md for related documentation. |
+| Earlier Work                                               | Older projects, including R markdown files for predicting student placements, analyzing housing/phishing data, and credit risk. |
+| WebWeave                                                   | A web application built using modern frontend tools like Vite, Tailwind, and TypeScript.         |
+| Admin                                                      | Python scripts for administrative tasks, including automation tools and management scripts.      |
+| GitHub-Repo-Analyzer                                       | Scripts for analyzing GitHub repositories and generating insights from starred repositories.     |
+| Advanced Data Processing Pipeline                          | A comprehensive data processing package that supports data transformation, feature engineering, model evaluation, and various other tasks for data preparation and analysis. |
+| AI-Research-Synthesizer                                    | A project focused on synthesizing AI research, including tools for text processing and integrations with Nvidia APIs. |
 
 </details>
 
