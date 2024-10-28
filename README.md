@@ -1,8 +1,8 @@
-MSBA
+
+# MSBA
 
 ----
-Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, amid other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications.
-Majority are personal projects or from undergrad + grad school. Stop reading! Seriously! Draft** 
+Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, and other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications. The majority are personal projects or from undergrad and grad school. Stop reading! Seriously! Draft**
 
 ![Alt text](SSSourceCode.png)
 
@@ -27,13 +27,13 @@ Majority are personal projects or from undergrad + grad school. Stop reading! Se
 
 ## Highlights
 
-- [Advanced Data Processing Pipeline](#advanced-data-processing-pipeline)
+- [Advanced Data Processing Pipeline](https://github.com/stochastic-sisyphus/Portfolio/tree/main/advanced_data_processing_pipeline)
 
 ---
 
 ## Repository Structure
 
-```sh
+```plaintext
 Portfolio/
 ├── ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb
 ├── Log_Reg_CIFAR10_Analysis.ipynb
@@ -144,6 +144,7 @@ Portfolio/
 │       ├── __init__.py
 │       ├── text_processor.py
 │       └── nvidia_api.py
+```
 
 ---
 
@@ -151,23 +152,25 @@ Portfolio/
 
 | File/Directory                                             | Summary                                                                                         |
 |------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb  | A Jupyter notebook explaining machine learning fundamentals, specifically focusing on backpropagation and gradient descent. |
-| Log_Reg_CIFAR10_Analysis.ipynb                             | Analysis using logistic regression on the CIFAR-10 dataset, exploring image classification.      |
-| DeepLearningLangProj_NormalizationTranslation.ipynb        | A notebook on deep learning for language projects, covering tasks such as normalization and translation. |
-| Language_Modeling_Text_Analytics.ipynb                     | Jupyter notebook involving text analytics with language modeling techniques.                     |
-| LSTM_Text_Modeling.ipynb                                   | Notebook focusing on text modeling using Long Short-Term Memory (LSTM) neural networks.          |
-| Web Summarizer                                             | A Python tool for summarizing web content from a given URL, with a corresponding README.         |
-| Web Scraping                                               | Scripts for automating data scraping from the Panel Study of Income Dynamics (PSID).             |
-| Docs                                                       | Contains the Data Science Guide.pdf for data science methodologies and powertools.md for related documentation. |
-| Earlier Work                                               | Older projects, including R markdown files for predicting student placements, analyzing housing/phishing data, and credit risk. |
-| WebWeave                                                   | A web application built using modern frontend tools like Vite, Tailwind, and TypeScript.         |
-| Admin                                                      | Python scripts for administrative tasks, including automation tools and management scripts.      |
-| GitHub-Repo-Analyzer                                       | Scripts for analyzing GitHub repositories and generating insights from starred repositories.     |
-| Advanced Data Processing Pipeline                          | A comprehensive data processing package that supports data transformation, feature engineering, model evaluation, and various other tasks for data preparation and analysis. |
-| AI-Research-Synthesizer                                    | A project focused on synthesizing AI research, including tools for text processing and integrations with Nvidia APIs. |
+| [ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb)  | Explains machine learning fundamentals, focusing on backpropagation and gradient descent.        |
+| [Log_Reg_CIFAR10_Analysis.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Log_Reg_CIFAR10_Analysis.ipynb)                             | Logistic regression analysis on CIFAR-10 dataset for image classification.                       |
+| [DeepLearningLangProj_NormalizationTranslation.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/DeepLearningLangProj_NormalizationTranslation.ipynb)        | Covers deep learning tasks like normalization and translation for language projects.             |
+| [Language_Modeling_Text_Analytics.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/Language_Modeling_Text_Analytics.ipynb)                     | Uses language modeling techniques for text analytics.                                            |
+| [LSTM_Text_Modeling.ipynb](https://github.com/stochastic-sisyphus/Portfolio/blob/main/LSTM_Text_Modeling.ipynb)                                   | Focuses on text modeling with Long Short-Term Memory (LSTM) neural networks.                     |
+| [Web Summarizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/Web%20Summarizer)                                             | Summarizes web content from given URLs using a Python tool.                                      |
+| [Web Scraping](https://github.com/stochastic-sisyphus/Portfolio/tree/main/Web%20Scraping)                                               | Scripts automate data scraping from the Panel Study of Income Dynamics (PSID).                   |
+| [Docs](https://github.com/stochastic-sisyphus/Portfolio/tree/main/Docs)                                                       | Contains a Data Science Guide and documentation for power tools.                                 |
+| [Earlier Work](https://github.com/stochastic-sisyphus/Portfolio/tree/main/earlier%20work)                                               | Includes older projects in R Markdown, such as student placement predictions, housing, and phishing data analysis. |
+| [WebWeave](https://github.com/stochastic-sisyphus/Portfolio/tree/main/WebWeave)                                                   | Web application using Vite, Tailwind, and TypeScript.                                            |
+| [Admin](https://github.com/stochastic-sisyphus/Portfolio/tree/main/admin)                                                      | Python scripts for administrative tasks, including automation and management.                    |
+| [GitHub-Repo-Analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer)                                       | Analyzes GitHub repositories and provides insights on starred repositories.                      |
+| [Advanced Data Processing Pipeline](https://github.com/stochastic-sisyphus/Portfolio/tree/main/advanced_data_processing_pipeline)                          | Comprehensive data processing package for transformation, feature engineering, and evaluation.   |
+| [AI-Research-Synthesizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/AI-Research-Synthesizer)                                    | Synthesizes AI research and
+
+ integrates text processing with Nvidia APIs.                         |
 
 ---
 
 ## About Me
 
-[Medium](https://medium.com/@Stochastic-Sisyphus) | [LinkedIn](https://www.linkedin.com/in/vanessa-b-189958196)
+Connect with me on [Medium](https://medium.com/@Stochastic-Sisyphus) or [LinkedIn](https://www.linkedin.com/in/vanessa-b-189958196).
