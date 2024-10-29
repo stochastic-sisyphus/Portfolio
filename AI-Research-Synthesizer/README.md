@@ -65,10 +65,7 @@ A3: AI is used in robotics to enable machines to perform tasks that typically re
 - requests
 - nltk
 
-## Note
+## Example Outputs
 
-This project uses the NVIDIA API and requires a valid API key to function. Ensure you have the necessary permissions and credits to use the API.
-
-
-## To view example outputs please see the photo pdf in this folder. 
+To view example outputs please see the photo pdf in this folder. 
 [View the PDF](https://github.com/stochastic-sisyphus/Portfolio/blob/main/AI-Research-Synthesizer/Photo.pdf)
