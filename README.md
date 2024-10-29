@@ -147,6 +147,11 @@ Portfolio/
 │       ├── __init__.py
 │       ├── text_processor.py
 │       └── nvidia_api.py
+├── data-quality-facelift/
+│   ├── main_dynamic.py
+│   ├── main.py
+│   ├── model_evaluation.py
+│   ├── README.md
 ```
 
 ---
@@ -169,6 +174,7 @@ Portfolio/
 | [GitHub-Repo-Analyzer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/github-repo-analyzer)                                       | Analyzes GitHub repositories and provides insights on starred repositories.                      |
 | [Advanced Data Processing Pipeline](https://github.com/stochastic-sisyphus/Portfolio/tree/main/advanced_data_processing_pipeline)                          | Comprehensive data processing package for transformation, feature engineering, and evaluation.   |
 | [AI-Research-Synthesizer](https://github.com/stochastic-sisyphus/Portfolio/tree/main/AI-Research-Synthesizer)                                    | Synthesizes AI research and integrates text processing with Nvidia APIs.                         |
+| [Data Quality Facelift](https://github.com/stochastic-sisyphus/Portfolio/tree/main/data-quality-facelift)                                    | Enhances data quality with advanced analysis and model evaluation tools.                         |
 
 ---
 
