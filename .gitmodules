@@ -1,0 +1,3 @@
+[submodule "synsearch"]
+	path = synsearch
+	url = https://github.com/stochastic-sisyphus/synsearch.git
