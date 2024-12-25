@@ -17,10 +17,13 @@ Portfolio adjacent. This is a collection of data analysis and data science, stat
 
 ## Quick Links
 
-- [Highlights](#highlights)
-- [Repository Structure](#repository-structure)
-- [Project Breakdown](#project-breakdown)
-- [About Me](#about-me)
+- [MSBA](#msba)
+  - [Skills and Technologies](#skills-and-technologies)
+  - [Quick Links](#quick-links)
+  - [Highlights](#highlights)
+  - [Repository Structure](#repository-structure)
+  - [Project Breakdown](#project-breakdown)
+  - [About Me](#about-me)
 
 ---
 
@@ -38,120 +41,48 @@ Portfolio adjacent. This is a collection of data analysis and data science, stat
 
 ```plaintext
 Portfolio/
-├── ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb
-├── Log_Reg_CIFAR10_Analysis.ipynb
-├── SSSourceCode.png
-├── DeepLearningLangProj_NormalizationTranslation.ipynb
-├── Language_Modeling_Text_Analytics.ipynb
-├── Language_Modeling_Project.txt
-├── README.md
-├── nltk_senses_embeddings.ipynb
-├── LSTM_Text_Modeling.ipynb
-├── Web Summarizer/
-│   ├── url_summarizer.py
-│   └── README.md
-├── Web Scraping/
-│   ├── PSID_Data_Scraping_Automation.py
-│   └── PSID_Automatic_Data_Retrieval_Web_Driver.py
-├── Docs/
-│   ├── Data Science Guide.pdf
-│   └── powertools.md
-├── earlier work/
-│   ├── Student_Placement_Prediction.Rmd
-│   ├── Housing_and_Phishing_Data_Analysis.Rmd
-│   └── Credit_Risk_Analysis.Rmd
-├── WebWeave/
-│   ├── index.html
-│   ├── tailwind.config.js
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── README.md
-│   ├── vite.config.ts
-│   └── src/
-│       ├── App.tsx
-│       ├── main.tsx
-│       ├── index.css
-│       ├── types/
-│       │   └── index.ts
-│       ├── components/
-│       │   ├── TabDetails.tsx
-│       │   ├── TabVisualizations.tsx
-│       │   ├── TabCard.tsx
-│       │   ├── ExportButton.tsx
-│       │   ├── UrlInput.tsx
-│       │   ├── CategoryColumn.tsx
-│       │   ├── TabContent.tsx
-│       │   ├── SimilarTabs.tsx
-│       │   ├── EnvWarning.tsx
-│       │   ├── TabManager.tsx
-│       │   ├── DraggableTab.tsx
-│       │   └── SearchBar.tsx
-│       ├── services/
-│       │   ├── insights.ts
-│       │   ├── urlProcessor.ts
-│       │   └── openai.ts
-│       └── store/
-│           ├── store.ts
-│           └── types.ts
-├── admin/
-│   ├── admin_script.py
-│   ├── management_tool.py
-│   └── README.md
-├── github-repo-analyzer/
-│   ├── analyzer.py
-│   ├── utils.py
-│   ├── requirements.txt
-│   └── README.md
-├── .git/
-├── advanced_data_processing_pipeline/
-│   ├── requirements.txt
-│   ├── readme.md
-│   ├── setup.py
-│   ├── docs.md
-│   └── adv_data_processing/
-│       ├── __init__.py
-│       ├── transformation.py
-│       ├── model_evaluation.py
-│       ├── feature_engineering.py
-│       ├── feature_selection.py
-│       ├── loading.py
-│       ├── data_preprocessing.py
-│       ├── topic_modeling.py
-│       ├── imbalanced_data.py
-│       ├── visualization.py
-│       ├── data_validation.py
-│       ├── error_handling.py
-│       ├── entity_recognition.py
-│       ├── utils.py
-│       ├── pipeline.py
-│       ├── data_transformation.py
-│       ├── dimensionality_reduction.py
-│       ├── main.py
-│       ├── MANIFEST.in
-│       ├── text_analytics.py
-│       ├── cleaning.py
-│       └── tests/
-│           └── test_data_pipeline.py
-├── AI-Research-Synthesizer/
-│   ├── config.py
-│   ├── requirements.txt
-│   ├── Photo.pdf
-│   ├── README.md
-│   ├── setup_env.sh
-│   ├── main.py
-│   ├── agents/
-│   │   ├── __init__.py
-│   │   ├── synthesizer.py
-│   │   └── researcher.py
-│   └── utils/
-│       ├── __init__.py
-│       ├── text_processor.py
-│       └── nvidia_api.py
-├── data-quality-facelift/
-│   ├── main_dynamic.py
-│   ├── main.py
-│   ├── model_evaluation.py
-│   ├── README.md
+├── data-science/
+│   ├── advanced-data-processing/
+│   ├── data-quality-facelift/
+│   ├── github-analyzers/
+│   │   ├── portfolio-analyzer/
+│   │   └── repo-analyzer/
+│   └── early-analysis/
+│       ├── credit-risk/
+│       ├── housing-analysis/
+│       └── student-placement/
+│
+├── machine-learning/
+│   ├── basics/
+│   │   └── ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb
+│   ├── computer-vision/
+│   │   └── Log_Reg_CIFAR10_Analysis.ipynb
+│   ├── nlp/
+│   │   ├── LSTM_Text_Modeling.ipynb
+│   │   ├── nltk_senses_embeddings.ipynb
+│   │   └── Language_Modeling_Text_Analytics.ipynb
+│   └── recommender-systems/
+│       └── recommendation_system.py
+│
+├── ai-automation/
+│   ├── research-tools/
+│   │   ├── AI-Research-Synthesizer/
+│   │   └── synsearch/
+│   ├── web-automation/
+│   │   └── web-scraping/
+│   └── content-processing/
+│       └── web-summarizer/
+│
+├── docs/
+│   ├── guides/
+│   │   └── Data_Science_Guide.pdf
+│   └── references/
+│       └── Power_Tools.md
+│
+└── misc/
+    ├── admin/
+    └── assets/
+        └── SSSourceCode.png
 ```
 
 ---
