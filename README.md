@@ -68,20 +68,24 @@ Portfolio/
 
 | File/Directory | Summary |
 |----------------|---------|
-| [ML_Basics_with_Backpropagation](machine-learning/basics/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | Explains machine learning fundamentals, focusing on backpropagation and gradient descent. |
-| [Log_Reg_CIFAR10_Analysis](machine-learning/computer-vision/Log_Reg_CIFAR10_Analysis.ipynb) | Logistic regression analysis on CIFAR-10 dataset for image classification. |
-| [DeepLearningLangProj](machine-learning/nlp/DeepLearningLangProj_NormalizationTranslation.ipynb) | Covers deep learning tasks like normalization and translation for language projects. |
-| [Language_Modeling](machine-learning/nlp/Language_Modeling_Text_Analytics.ipynb) | Uses language modeling techniques for text analytics. |
-| [LSTM_Text_Modeling](machine-learning/nlp/LSTM_Text_Modeling.ipynb) | Focuses on text modeling with Long Short-Term Memory (LSTM) neural networks. |
-| [Web Summarizer](ai-automation/content-processing) | Summarizes web content from given URLs using a Python tool. |
-| [Web Scraping](ai-automation/web-automation) | Scripts automate data scraping from the Panel Study of Income Dynamics (PSID). |
-| [Docs](docs) | Contains a Data Science Guide and documentation for power tools. |
-| [Earlier Work](data-science/early-analysis) | Includes older projects in R Markdown, such as student placement predictions, housing, and phishing data analysis. |
-| [Admin](misc/admin) | Python scripts for administrative tasks, including automation and management. |
-| [GitHub-Analyzers](data-science/github-analyzers) | Analyzes GitHub repositories and provides insights on starred repositories. |
-| [Advanced Data Processing](data-science/advanced-data-processing) | Comprehensive data processing package for transformation, feature engineering, and evaluation. |
-| [AI-Research-Synthesizer](ai-automation/research-tools) | Synthesizes AI research and integrates text processing with Nvidia APIs. |
-| [Data Quality Facelift](data-science/data-quality-facelift) | Enhances data quality with advanced analysis and model evaluation tools. |
+| [ML Basics](machine-learning/basics/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | Machine learning fundamentals with backpropagation and gradient descent. |
+| [CIFAR10 Analysis](machine-learning/computer-vision/Log_Reg_CIFAR10_Analysis.ipynb) | Image classification using logistic regression on CIFAR-10 dataset. |
+| [Deep Learning Language](machine-learning/nlp/DeepLearningLangProj_NormalizationTranslation.ipynb) | Normalization and translation for language projects. |
+| [Language Modeling](machine-learning/nlp/Language_Modeling_Text_Analytics.ipynb) | Text analytics and language modeling techniques. |
+| [LSTM Text Modeling](machine-learning/nlp/LSTM_Text_Modeling.ipynb) | Text modeling using LSTM neural networks. |
+| [NLTK Embeddings](machine-learning/nlp/nltk_senses_embeddings.ipynb) | Word sense disambiguation and embeddings using NLTK. |
+| [Recommender System](machine-learning/recommender-systems/recommendation_system.py) | Implementation of recommendation algorithms. |
+| [PSID Web Scraping](ai-automation/web-automation/PSID_Automatic_Data_Retrieval_Web_Driver.py) | Automated data retrieval from PSID database. |
+| [Web Summarizer](ai-automation/content-processing/url_summarizer.py) | URL content summarization tool. |
+| [AI Research Synthesizer](ai-automation/research-tools/AI-Research-Synthesizer) | Research synthesis with Nvidia API integration. |
+| [Synsearch](ai-automation/research-tools/synsearch) | Advanced research synthesis tool. |
+| [Advanced Data Processing](data-science/advanced-data-processing) | Comprehensive data pipeline with cleaning and transformation. |
+| [Data Quality Facelift](data-science/data-quality-facelift) | Data quality enhancement with Streamlit interface. |
+| [GitHub Portfolio Analyzer](data-science/github-analyzers/portfolio-analyzer) | Analysis tool for GitHub portfolios. |
+| [GitHub Repo Analyzer](data-science/github-analyzers/repo-analyzer) | Repository analysis and insights tool. |
+| [Credit Risk Analysis](data-science/early-analysis/credit-risk/Credit_Risk_Analysis.Rmd) | Statistical analysis of credit risk factors. |
+| [Housing Analysis](data-science/early-analysis/housing-analysis/Housing_and_Phishing_Data_Analysis.Rmd) | Housing market and phishing data analysis. |
+| [Student Placement](data-science/early-analysis/student-placement/Student_Placement_Prediction.Rmd) | Predictive modeling for student placement. |
 
 ---
 
