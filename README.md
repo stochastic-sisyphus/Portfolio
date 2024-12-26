@@ -47,6 +47,7 @@ Portfolio/
 ├── Data-Science-and-Analysis/
 │   ├── advanced-data-processing/
 │   ├── data-quality-facelift/
+│   ├── dna-analysis/
 │   ├── early-analysis/
 │   └── github-analyzers/
 ├── Machine-Learning-and-Deep-Learning/
@@ -81,6 +82,7 @@ Portfolio/
 | [Synsearch](Artificial-Intelligence/research-tools/synsearch) | Advanced research synthesis tool. |
 | [Advanced Data Processing](Data-Science-and-Analysis/advanced-data-processing) | Comprehensive data pipeline with cleaning and transformation. |
 | [Data Quality Facelift](Data-Science-and-Analysis/data-quality-facelift) | Data quality enhancement with Streamlit interface. |
+| [DNA Analysis](Data-Science-and-Analysis/dna-analysis) | DNA sequence analysis and processing tools. |
 | [GitHub Portfolio Analyzer](Data-Science-and-Analysis/github-analyzers/portfolio-analyzer) | Analysis tool for GitHub portfolios. |
 | [GitHub Repo Analyzer](Data-Science-and-Analysis/github-analyzers/repo-analyzer) | Repository analysis and insights tool. |
 | [Credit Risk Analysis](Data-Science-and-Analysis/early-analysis/credit-risk/Credit_Risk_Analysis.Rmd) | Statistical analysis of credit risk factors. |
