@@ -1,5 +1,7 @@
-# recommendation system i built for an ai platform with hundred thousand monthly users 
-## all proprietary language and specific details have been replaced
+# Recommendation System I engineered for a high-traffic AI Platform
+
+## All proprietary language and specific details have been modified.
+
 
 """
 Hybrid AI Recommendation System
