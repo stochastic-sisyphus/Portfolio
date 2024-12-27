@@ -78,7 +78,7 @@ Portfolio/
 | [Recommender System](Machine-Learning-and-Deep-Learning/recommender-systems/recommendation_system.py) | Implementation of recommendation algorithms. |
 | [PSID Web Scraping](Artificial-Intelligence/web-automation/PSID_Automatic_Data_Retrieval_Web_Driver.py) | Automated data retrieval from PSID database. |
 | [Web Summarizer](Artificial-Intelligence/content-processing/url_summarizer.py) | URL content summarization tool. |
-| [AI Research Synthesizer](Artificial-Intelligence/research-tools/AI-Research-Synthesizer) | Research synthesis with Nvidia API integration. |
+| [AI Research Synthesizer](Artificial-Intelligence/research-tools/README.md) | Research synthesis with Nvidia API integration. |
 | [Synsearch](Artificial-Intelligence/research-tools/synsearch) | Advanced research synthesis tool. |
 | [Advanced Data Processing](Data-Science-and-Analysis/advanced-data-processing) | Comprehensive data pipeline with cleaning and transformation. |
 | [Data Quality Facelift](Data-Science-and-Analysis/data-quality-facelift) | Data quality enhancement with Streamlit interface. |
