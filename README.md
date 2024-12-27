@@ -30,6 +30,7 @@ Portfolio adjacent. This is a collection of data analysis and data science, stat
 ## Highlights
 
 - [Advanced Data Processing Pipeline](Data-Science-and-Analysis/advanced-data-processing)
+- [DNA Analysis Tool](Data-Science-and-Analysis/dna-analysis)
 - [Recommender Systems](Machine-Learning-and-Deep-Learning/recommender-systems)
 - [Synsearch](Artificial-Intelligence/research-tools/synsearch)
 - [GitHub Analyzers](Data-Science-and-Analysis/github-analyzers)
@@ -82,7 +83,7 @@ Portfolio/
 | [Synsearch](Artificial-Intelligence/research-tools/synsearch) | Advanced research synthesis tool. |
 | [Advanced Data Processing](Data-Science-and-Analysis/advanced-data-processing) | Comprehensive data pipeline with cleaning and transformation. |
 | [Data Quality Facelift](Data-Science-and-Analysis/data-quality-facelift) | Data quality enhancement with Streamlit interface. |
-| [DNA Analysis](Data-Science-and-Analysis/dna-analysis) | DNA sequence analysis and processing tools. |
+| [DNA Analysis](Data-Science-and-Analysis/dna-analysis) | Comprehensive genetic analysis tool with health traits, ancestry analysis, and interactive dashboard. |
 | [GitHub Portfolio Analyzer](Data-Science-and-Analysis/github-analyzers/portfolio-analyzer) | Analysis tool for GitHub portfolios. |
 | [GitHub Repo Analyzer](Data-Science-and-Analysis/github-analyzers/repo-analyzer) | Repository analysis and insights tool. |
 | [Credit Risk Analysis](Data-Science-and-Analysis/early-analysis/credit-risk/Credit_Risk_Analysis.Rmd) | Statistical analysis of credit risk factors. |
