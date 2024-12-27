@@ -1,105 +1,104 @@
 # DNA Analysis Tool
 
-A comprehensive DNA sequence analysis tool that provides various functionalities for analyzing genetic data, including basic sequence statistics, composition analysis, pattern matching, and SNP analysis.
+A sophisticated DNA sequence analysis tool that provides comprehensive genetic insights, health traits analysis, and personalized recommendations through both interactive dashboards and detailed reports.
 
-## Features
+## 🧬 Key Features
 
-- **Basic Sequence Analysis**
-  - Sequence count and statistics
-  - File metadata analysis
-  - Sample data preview
+### Genetic Analysis
+- Comprehensive SNP (Single Nucleotide Polymorphism) analysis
+- Chromosome variant mapping and visualization
+- Genotype validation and quality checks
+- Multi-source data integration (ClinVar, dbSNP, PharmGKB)
 
-- **Composition Analysis**
-  - Nucleotide frequency counting
-  - GC content calculation
-  - Sequence validation
+### Health & Traits Analysis
+- **Fun & Unique Traits**
+  - Photic Sneeze Reflex
+  - Cilantro Taste Perception
+  - Perfect Pitch
+  - Circadian Rhythm
+  - Pain Sensitivity
 
-- **Pattern Matching**
-  - DNA pattern search functionality
-  - Position tracking for matches
-  - Multiple occurrence handling
+- **Environmental Response**
+  - UV Sensitivity
+  - Temperature Adaptation
+  - Altitude Response
 
-- **SNP Analysis**
-  - Comprehensive SNP data processing
-  - Health insights and trait analysis
-  - Genome coverage calculation
-  - Interactive visualization dashboard
+- **Nutrition & Diet**
+  - Caffeine Metabolism
+  - Carbohydrate Response
+  - Fat Metabolism
 
-## Project Structure
+- **Exercise Response**
+  - Muscle Type Analysis
+  - Exercise Recovery Patterns
+  - Injury Risk Assessment
 
-```plaintext
-dna-analysis/
-├── app.py              # Flask web application
-├── dna_analyzer.py     # Core DNA analysis functionality
-├── dna.ipynb          # Jupyter notebook with SNP analysis
-├── file_handler.py    # File I/O operations
-└── main.py            # Command-line interface
-```
+### Ancestry Analysis
+- Regional ancestry composition
+- Maternal haplogroup determination
+- Neanderthal ancestry percentage
+- Population-specific variant analysis
 
-## Usage
+## 📊 Interactive Dashboard
+- Chromosome-specific variant visualization
+- Health traits score visualization
+- Ancestry composition charts
+- Real-time data filtering and exploration
 
-1. **Command Line Interface**
+## 📋 Comprehensive Reports
+- Personalized health insights
+- Environmental adaptation recommendations
+- Lifestyle and exercise guidance
+- Nutrition and diet suggestions
+
+## 🛠 Technical Details
+
+### Dependencies
 ```bash
-python main.py
+pandas
+numpy
+plotly
+dash
+requests
+fpdf
 ```
 
-2. **Web Interface**
-```bash
-python app.py
-```
-
-3. **Jupyter Notebook**
-- Open `dna.ipynb` for interactive SNP analysis
-
-## Input Formats
-
-The tool supports various DNA sequence file formats:
-- Plain text files with DNA sequences
-- SNP data files
-- FASTA format
-- VCF files
-
-## Features in Detail
-
-### Basic Statistics
-- Total sequence count
-- File size and metadata
-- Column detection
-- Sample data preview
-
-### Sequence Composition
-- Nucleotide frequency analysis
-- GC content calculation
-- Sequence validation
-
-### Pattern Matching
-- Custom pattern search
-- Position tracking
-- Occurrence counting
-
-### SNP Analysis
-- Health trait analysis
-- Wellness insights
-- Genome coverage
-- Interactive visualizations
-
-## Dependencies
-
-- Python 3.8+
-- pandas
-- numpy
-- Flask
-- plotly
-- streamlit
-- scikit-learn
-- cryptography
-
-## Installation
-
+### Installation
 ```bash
 pip install -r requirements.txt
 ```
 
-## License
+### Usage
+```bash
+python genetic-dna-analysis.py --genome path/to/genome.txt [--report report.md] [--no-dashboard] [--port 8050]
+```
 
-MIT License 
+### Input Format
+Accepts tab-separated files with columns:
+- rsid (e.g., rs12345)
+- chromosome (1-22, X, Y, MT)
+- position (numeric)
+- genotype (A/C/G/T/D/I)
+
+## 🔒 Data Privacy
+- Local data processing
+- No external storage of genetic information
+- Cached API responses for performance
+- Rate-limited external API calls
+
+## 📚 API Integration
+- ClinVar: Variant clinical significance
+- dbSNP: Reference SNP data
+- PharmGKB: Pharmacogenomic data
+
+## 🖥 Output Formats
+- Interactive web dashboard
+- Markdown reports
+- Downloadable data tables
+- Interactive plots
+
+## 📈 Performance
+- Chunked data processing
+- Multithreaded analysis
+- LRU caching for API calls
+- Efficient data structures
