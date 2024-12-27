@@ -1,0 +1,24 @@
+# Core dependencies
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Visualization
+plotly>=5.13.0
+dash>=2.8.0
+dash-core-components>=2.0.0
+dash-html-components>=2.0.0
+dash-table>=5.0.0
+
+# Network
+requests>=2.28.0
+
+# PDF generation
+fpdf2>=2.7.0
+
+# Optional - for Jupyter notebook support
+jupyter>=1.0.0
+ipywidgets>=8.0.0
+
+# Utilities
+python-dateutil>=2.8.0
+tqdm>=4.65.0
