@@ -31,6 +31,7 @@ Portfolio adjacent. This is a collection of data analysis and data science, stat
 
 - [Advanced Data Processing Pipeline](Data-Science-and-Analysis/advanced-data-processing)
 - [DNA Analysis Tool](Data-Science-and-Analysis/dna-analysis)
+- [Feature Selection Framework](https://github.com/stochastic-sisyphus/feature-selection-optuna-remix)
 - [Recommender Systems](Machine-Learning-and-Deep-Learning/recommender-systems)
 - [Synsearch](Artificial-Intelligence/research-tools/synsearch)
 - [GitHub Analyzers](Data-Science-and-Analysis/github-analyzers)
@@ -73,7 +74,7 @@ Portfolio/
 | File/Directory | Summary |
 |----------------|---------|
 | [ML Basics](Machine-Learning-and-Deep-Learning/basics/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | Machine learning fundamentals with backpropagation and gradient descent. |
-| [Feature Selection Optuna](Machine-Learning-and-Deep-Learning/feature-selection-optuna-remix) | Advanced feature selection framework combining PCA, LASSO, and Optuna optimization. |
+| [Feature Selection Framework](https://github.com/stochastic-sisyphus/feature-selection-optuna-remix) | Advanced feature selection framework combining PCA, LASSO, and Optuna optimization. |
 | [CIFAR10 Analysis](Machine-Learning-and-Deep-Learning/computer-vision/Log_Reg_CIFAR10_Analysis.ipynb) | Image classification using logistic regression on CIFAR-10 dataset. |
 | [Deep Learning Language](Machine-Learning-and-Deep-Learning/nlp/DeepLearningLangProj_NormalizationTranslation.ipynb) | Normalization and translation for language projects. |
 | [Language Modeling](Machine-Learning-and-Deep-Learning/nlp/Language_Modeling_Text_Analytics.ipynb) | Text analytics and language modeling techniques. |
