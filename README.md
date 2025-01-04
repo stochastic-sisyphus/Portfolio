@@ -98,4 +98,4 @@ Portfolio/
 
 ## About Me
 
-Connect with me on [Medium](https://medium.com/@Stochastic-Sisyphus) or [LinkedIn](https://www.linkedin.com/in/vanessa-b-189958196).
+Connect with me on [Medium](https://medium.com/@Stochastic-Sisyphus) or [LinkedIn](https://www.linkedin.com/in/vanessa-b-msba).
