@@ -1,7 +1,9 @@
 # MSBA
 
 ----
-This repository is less of a portfolio and more of a work in progress—a collection of projects in data science, machine learning, and statistical modeling. Some are polished, some are experiments that may or may not go anywhere, and most sit somewhere in between. It’s a snapshot of my work—projects in various stages of completion, iterations that build on each other, and scripts that will probably get rewritten a few more times. The cycle repeats.
+This repository is less of a portfolio and more of a work in progress—a snapshot of my work in data science, machine learning, and statistical modeling. Some projects are polished, others are experiments that may or may not lead anywhere, and most sit somewhere in between.
+
+I fell down the rabbit hole of translating abstract ideas into something functional—optimizing models, automating processes, and mostly just figuring out why the latest iteration broke.
 
 ![Alt text](Miscellaneous/assets/SSSourceCode.png)
 
