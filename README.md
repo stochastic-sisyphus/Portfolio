@@ -1,7 +1,7 @@
 # MSBA
 
 ----
-Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, and other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications.
+This repository is less of a portfolio and more of a work in progress—a collection of projects in data science, machine learning, and statistical modeling. Some are polished, some are experiments that may or may not go anywhere, and most sit somewhere in between. It’s a snapshot of my work—projects in various stages of completion, iterations that build on each other, and scripts that will probably get rewritten a few more times. The cycle repeats.
 
 ![Alt text](Miscellaneous/assets/SSSourceCode.png)
 
