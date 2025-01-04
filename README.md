@@ -28,7 +28,7 @@ This repository is less of a portfolio and more of a work in progress—a collec
 ---
 
 ## Highlights
-
+These aren’t necessarily my “best” projects, but they represent differently points in my process. 
 - [Advanced Data Processing Pipeline](Data-Science-and-Analysis/advanced-data-processing)
 - [DNA Analysis Tool](Data-Science-and-Analysis/dna-analysis)
 - [Feature Selection Framework](https://github.com/stochastic-sisyphus/feature-selection-optuna-remix)
