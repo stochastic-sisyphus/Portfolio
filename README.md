@@ -66,7 +66,7 @@ Portfolio/
     ├── admin/
     └── assets/
 ```
-
+A high-level view, but in reality, each directory is filled with experiments, half-finished ideas, and scripts that probably need refactoring.
 ---
 
 ## Project Breakdown 
