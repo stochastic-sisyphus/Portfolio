@@ -39,7 +39,7 @@ This repository is less of a portfolio and more of a work in progress—a collec
 ---
 
 ## Repository Structure
-
+A high-level view, but in reality, each directory is filled with experiments, half-finished ideas, and scripts that probably need refactoring.
 ```plaintext
 Portfolio/
 ├── Artificial-Intelligence/
@@ -66,7 +66,7 @@ Portfolio/
     ├── admin/
     └── assets/
 ```
-A high-level view, but in reality, each directory is filled with experiments, half-finished ideas, and scripts that probably need refactoring.
+
 ---
 
 ## Project Breakdown 
