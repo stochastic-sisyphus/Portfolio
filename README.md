@@ -1,9 +1,9 @@
 # MSBA
 
 ----
-This repository is less of a portfolio and more of a work in progress—a snapshot of my work in data science, machine learning, and statistical modeling. Some projects are polished, others are experiments that may or may not lead anywhere, and most sit somewhere in between.
+This repository is less of a portfolio and more of a work in progress; a snapshot of my work in data science, machine learning, and statistical modeling. Some projects are polished, others are experiments that may or may not lead anywhere, and most sit somewhere in between.
 
-I fell down the rabbit hole of translating abstract ideas into something functional—optimizing models, automating processes, and mostly just figuring out why the latest iteration broke.
+Lost in the rabbit hole of translating abstract ideas into something tangible—optimizing models, automating processes, and mostly just figuring out why the latest iteration broke.
 
 ![Alt text](Miscellaneous/assets/SSSourceCode.png)
 
@@ -30,7 +30,7 @@ I fell down the rabbit hole of translating abstract ideas into something functio
 ---
 
 ## Highlights
-These aren’t necessarily my “best” projects, but they represent differently points in my process. 
+These aren’t necessarily my “best” projects, but they represent different points in my process. 
 - [Advanced Data Processing Pipeline](Data-Science-and-Analysis/advanced-data-processing)
 - [DNA Analysis Tool](Data-Science-and-Analysis/dna-analysis)
 - [Feature Selection Framework](https://github.com/stochastic-sisyphus/feature-selection-optuna-remix)
