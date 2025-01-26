@@ -4,6 +4,7 @@
 This repository is less of a portfolio and more of a work in progress; a snapshot of my work in data science, machine learning, and statistical modeling. Some projects are polished, others are experiments that may or may not lead anywhere, and most sit somewhere in between.
 
 Lost in the rabbit hole of translating abstract ideas into something tangible—optimizing models, automating processes, and mostly just figuring out why the latest iteration broke.
+currently: working paper, research, so check out my [research repo](https://github.com/stochastic-sisyphus/research) while I  procrastinate updating this repo ( :D i hope i updated that one :D maybe :D by the time you click the link :--D )
 
 ![Alt text](Miscellaneous/assets/SSSourceCode.png)
 
