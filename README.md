@@ -5,9 +5,9 @@ This repository is less of a portfolio and more of a work in progress; a snapsho
 
 Lost in the rabbit hole of translating abstract ideas into something tangible—optimizing models, automating processes, and mostly just figuring out why the latest iteration broke.
 ## Not in this Repo: 
-[Masters-Capstone-Project](https://github.com/stochastic-sisyphus/Masters-Capstone-Bosch-Metadata-LLM)
+- [Masters-Capstone-Project](https://github.com/stochastic-sisyphus/Masters-Capstone-Bosch-Metadata-LLM)
 
-[readme.self: because to conceptualize oneself, one needs a concept map](https://stochastic-sisyphus.github.io/self/)
+- [readme.self: because to conceptualize oneself, one needs a concept map](https://stochastic-sisyphus.github.io/self/)
 
 - any research, so check out my [research repo](https://github.com/stochastic-sisyphus/research) while I  procrastinate updating this repo ( :D i hope i updated that one :D maybe :D by the time you click the link :--D )
 ---
