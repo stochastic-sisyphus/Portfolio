@@ -21,6 +21,7 @@ Lost in the rabbit hole of translating abstract ideas into something tangible—
 
 ## Not in this Repo: 
 [Masters-Capstone-Project](https://github.com/stochastic-sisyphus/Masters-Capstone-Bosch-Metadata-LLM)
+[readme.self: because to conceptualize oneself, one needs a concept map](https://stochastic-sisyphus.github.io/self/)
 
 ## Quick Links
 
