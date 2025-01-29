@@ -10,6 +10,7 @@ Lost in the rabbit hole of translating abstract ideas into something tangible—
 [readme.self: because to conceptualize oneself, one needs a concept map](https://stochastic-sisyphus.github.io/self/)
 
 research, so check out my [research repo](https://github.com/stochastic-sisyphus/research) while I  procrastinate updating this repo ( :D i hope i updated that one :D maybe :D by the time you click the link :--D )
+---
 
 ![Alt text](Miscellaneous/assets/SSSourceCode.png)
 
