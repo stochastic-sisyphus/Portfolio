@@ -7,6 +7,8 @@ Lost in the rabbit hole of translating abstract ideas into something tangible—
 ## Not in this Repo: 
 - [Masters-Capstone-Project](https://github.com/stochastic-sisyphus/Masters-Capstone-Bosch-Metadata-LLM)
 
+- [Chicago Population Prediction, Analysis, & (So Much) More](https://github.com/stochastic-sisyphus/chipop-pred-apropos)
+
 - [readme.self: because to conceptualize oneself, one needs a concept map](https://stochastic-sisyphus.github.io/self/)
 
 - any research, so check out my [research repo](https://github.com/stochastic-sisyphus/research) while I  procrastinate updating this repo ( :D i hope i updated that one :D maybe :D by the time you click the link :--D )
