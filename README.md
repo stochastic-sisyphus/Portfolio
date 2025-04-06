@@ -13,8 +13,6 @@ Lost in the rabbit hole of translating abstract ideas into something tangible—
 
 - any research, so check out my [research repo](https://github.com/stochastic-sisyphus/research) while I  procrastinate updating this repo ( :D i hope i updated that one :D maybe :D by the time you click the link :--D )
 ---
-[![Bookmark Style Card](https://svg.bookmark.style/api?url=https://github.com/stochastic-sisyphus)](https://github.com/stochastic-sisyphus)
-
 ![sillyintro](Miscellaneous/assets/SSSourceCode.png)
 
 ## Skills and Technologies
