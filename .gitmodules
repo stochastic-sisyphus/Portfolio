@@ -1,3 +1,18 @@
 [submodule "synsearch"]
 	path = synsearch
 	url = https://github.com/stochastic-sisyphus/synsearch.git
+[submodule "Artificial-Intelligence/code-cartographer"]
+	path = Artificial-Intelligence/code-cartographer
+	url = https://github.com/stochastic-sisyphus/code-cartographer.git
+[submodule "Data-Science-and-Analysis/chipop-pred-apropos"]
+	path = Data-Science-and-Analysis/chipop-pred-apropos
+	url = https://github.com/stochastic-sisyphus/chipop-pred-apropos.git
+[submodule "Masters-Capstone/Masters-Capstone-Bosch-Metadata-LLM"]
+	path = Masters-Capstone/Masters-Capstone-Bosch-Metadata-LLM
+	url = https://github.com/stochastic-sisyphus/Masters-Capstone-Bosch-Metadata-LLM.git
+[submodule "Artificial-Intelligence/synsearch"]
+	path = Artificial-Intelligence/synsearch
+	url = https://github.com/stochastic-sisyphus/synsearch.git
+[submodule "Data-Science-and-Analysis/adv_data_processing_pipeline"]
+	path = Data-Science-and-Analysis/adv_data_processing_pipeline
+	url = https://github.com/stochastic-sisyphus/adv_data_processing_pipeline.git

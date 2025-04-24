@@ -1,19 +1,9 @@
 # MSBA
 
 ----
-This repository is less of a portfolio and more of a work in progress; a snapshot of my work in data science, machine learning, and statistical modeling. Some projects are polished, others are experiments that may or may not lead anywhere, and most sit somewhere in between.
+Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, and other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications.
 
-Lost in the rabbit hole of translating abstract ideas into something tangible—optimizing models, automating processes, and mostly just figuring out why the latest iteration broke.
-## Not in this Repo: 
-- [Masters-Capstone-Project](https://github.com/stochastic-sisyphus/Masters-Capstone-Bosch-Metadata-LLM)
-
-- [Chicago Population Prediction, Analysis, & (So Much) More](https://github.com/stochastic-sisyphus/chipop-pred-apropos)
-
-- [readme.self: because to conceptualize oneself, one needs a concept map](https://stochastic-sisyphus.github.io/self/)
-
-- any research, so check out my [research repo](https://github.com/stochastic-sisyphus/research) while I  procrastinate updating this repo ( :D i hope i updated that one :D maybe :D by the time you click the link :--D )
----
-![sillyintro](Miscellaneous/assets/SSSourceCode.png)
+![Alt text](Miscellaneous/assets/SSSourceCode.png)
 
 ## Skills and Technologies
 
@@ -30,51 +20,92 @@ Lost in the rabbit hole of translating abstract ideas into something tangible—
 - [MSBA](#msba)
   - [Skills and Technologies](#skills-and-technologies)
   - [Quick Links](#quick-links)
-  - [Highlights](#highlights)
+  - [Featured Projects](#featured-projects)
   - [Repository Structure](#repository-structure)
   - [Project Breakdown](#project-breakdown)
   - [About Me](#about-me)
 
 ---
 
-## Highlights
-These aren’t necessarily my “best” projects, but they represent different points in my process. 
-- [Advanced Data Processing Pipeline](Data-Science-and-Analysis/advanced-data-processing)
-- [DNA Analysis Tool](Data-Science-and-Analysis/dna-analysis)
-- [Feature Selection Framework](https://github.com/stochastic-sisyphus/feature-selection-optuna-remix)
-- [Recommender Systems](Machine-Learning-and-Deep-Learning/recommender-systems)
-- [Synsearch](Artificial-Intelligence/research-tools/synsearch)
-- [GitHub Analyzers](Data-Science-and-Analysis/github-analyzers)
+## Featured Projects
+
+### [Code Cartographer](Artificial-Intelligence/code-cartographer)
+A sophisticated static analyzer for Python projects that helps manage code complexity and variants:
+- Function/class SHA-256 hashing to detect variants and clones
+- Cyclomatic complexity & maintainability analysis
+- Auto-generated LLM refactor prompts
+- Interactive dashboard for code analysis
+- Internal dependency graphing
+
+### [Chicago Population Forecast](Data-Science-and-Analysis/chipop-pred-apropos)
+Comprehensive population shift analysis and prediction system:
+- Multi-source data integration (Chicago Data Portal, Census Bureau, FRED)
+- Advanced modeling with scenario analysis
+- Zip code level impact assessment
+- Interactive visualization dashboard
+- Automated data pipeline
+
+### [Masters Capstone - Bosch Metadata LLM](Masters-Capstone/Masters-Capstone-Bosch-Metadata-LLM)
+LLM-powered system for enriching internal knowledge retrieval:
+- Automated metadata extraction and enhancement
+- Custom LLM fine-tuning for domain-specific tasks
+- Semantic search integration
+- Knowledge graph construction
+
+### [Feature Selection Framework](Machine-Learning-and-Deep-Learning/feature-selection-optuna-remix)
+Advanced feature selection combining multiple techniques:
+- PCA dimensionality reduction
+- LASSO regularization
+- Optuna hyperparameter optimization
+- Automated feature importance ranking
+
+### [Synsearch](Artificial-Intelligence/synsearch)
+Custom semantic search implementation:
+- Sentence transformer embeddings
+- Efficient vector similarity search
+- Customizable ranking algorithms
+- API integration capabilities
+
+### [Advanced Data Pipeline](Data-Science-and-Analysis/adv_data_processing_pipeline)
+Production-grade data processing framework:
+- Modular pipeline architecture
+- Automated quality checks
+- Scalable processing components
+- Comprehensive logging and monitoring
 
 ---
 
 ## Repository Structure
-A high-level view, but in reality, each directory is filled with experiments, half-finished ideas, and scripts that probably need refactoring.
+
 ```plaintext
 Portfolio/
 ├── Artificial-Intelligence/
-│   ├── content-processing/
-│   ├── research-tools/
-│   └── web-automation/
+│   ├── code-cartographer/      # Deep static code analyzer
+│   ├── content-processing/     # Content analysis tools
+│   ├── research-tools/         # Research automation
+│   ├── synsearch/             # Semantic search engine
+│   └── web-automation/        # Web scraping and automation
 ├── Data-Science-and-Analysis/
-│   ├── advanced-data-processing/
-│   ├── data-quality-facelift/
-│   ├── dna-analysis/
-│   ├── early-analysis/
-│   └── github-analyzers/
+│   ├── adv_data_processing_pipeline/  # Production data pipeline
+│   ├── chipop-pred-apropos/          # Chicago population analysis
+│   ├── data-quality-facelift/        # Data quality tools
+│   ├── dna-analysis/                 # Genetic analysis
+│   ├── early-analysis/               # Initial analysis projects
+│   └── github-analyzers/             # GitHub analytics tools
 ├── Machine-Learning-and-Deep-Learning/
-│   ├── basics/
-│   │   └── ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb
-│   ├── feature-selection-optuna-remix/
-│   ├── computer-vision/
-│   ├── nlp/
-│   └── recommender-systems/
+│   ├── basics/                       # ML fundamentals
+│   ├── feature-selection-optuna-remix/ # Advanced feature selection
+│   ├── computer-vision/              # Image processing
+│   ├── nlp/                          # Natural language processing
+│   └── recommender-systems/          # Recommendation engines
+├── Masters-Capstone/
+│   └── Masters-Capstone-Bosch-Metadata-LLM/  # LLM for metadata
 ├── Documentation/
-│   ├── guides/
-│   └── references/
+│   ├── guides/                       # Usage guides
+│   └── references/                   # Reference materials
 └── Miscellaneous/
-    ├── admin/
-    └── assets/
+    ├── admin/                        # Administrative files
+    └── assets/                       # Media and resources
 ```
 
 ---
@@ -83,8 +114,13 @@ Portfolio/
 
 | File/Directory | Summary |
 |----------------|---------|
+| [Code Cartographer](Artificial-Intelligence/code-cartographer) | Deep static analyzer for Python projects. Features SHA-256 hashing for variant detection, complexity analysis, dependency graphing, and interactive dashboard. |
+| [Chicago Population Forecast](Data-Science-and-Analysis/chipop-pred-apropos) | Population prediction and analysis system integrating multiple data sources (Chicago Data Portal, Census, FRED) with scenario modeling and zip-code level predictions. |
+| [Masters Capstone - Bosch](Masters-Capstone/Masters-Capstone-Bosch-Metadata-LLM) | LLM-based system for enriching metadata in internal knowledge bases, featuring custom fine-tuning and semantic search integration. |
+| [Feature Selection Framework](Machine-Learning-and-Deep-Learning/feature-selection-optuna-remix) | Advanced feature selection combining PCA, LASSO, and Optuna optimization for optimal feature subset selection. |
+| [Synsearch](Artificial-Intelligence/synsearch) | Custom semantic search engine using sentence transformers and efficient vector similarity search. |
+| [Advanced Data Pipeline](Data-Science-and-Analysis/adv_data_processing_pipeline) | Production-grade data processing framework with modular components and comprehensive monitoring. |
 | [ML Basics](Machine-Learning-and-Deep-Learning/basics/ML_Basics_with_Backpropagation_and_Gradient_Descent.ipynb) | Machine learning fundamentals with backpropagation and gradient descent. |
-| [Feature Selection Framework](https://github.com/stochastic-sisyphus/feature-selection-optuna-remix) | Advanced feature selection framework combining PCA, LASSO, and Optuna optimization. |
 | [CIFAR10 Analysis](Machine-Learning-and-Deep-Learning/computer-vision/Log_Reg_CIFAR10_Analysis.ipynb) | Image classification using logistic regression on CIFAR-10 dataset. |
 | [Deep Learning Language](Machine-Learning-and-Deep-Learning/nlp/DeepLearningLangProj_NormalizationTranslation.ipynb) | Normalization and translation for language projects. |
 | [Language Modeling](Machine-Learning-and-Deep-Learning/nlp/Language_Modeling_Text_Analytics.ipynb) | Text analytics and language modeling techniques. |
@@ -94,8 +130,6 @@ Portfolio/
 | [PSID Web Scraping](Artificial-Intelligence/web-automation/PSID_Automatic_Data_Retrieval_Web_Driver.py) | Automated data retrieval from PSID database. |
 | [Web Summarizer](Artificial-Intelligence/content-processing/url_summarizer.py) | URL content summarization tool. |
 | [AI Research Synthesizer](Artificial-Intelligence/research-tools/README.md) | Research synthesis with Nvidia API integration. |
-| [Synsearch](Artificial-Intelligence/research-tools/synsearch) | Advanced research synthesis tool. |
-| [Advanced Data Processing](Data-Science-and-Analysis/advanced-data-processing) | Comprehensive data pipeline with cleaning and transformation. |
 | [Data Quality Facelift](Data-Science-and-Analysis/data-quality-facelift) | Data quality enhancement with Streamlit interface. |
 | [DNA Analysis](Data-Science-and-Analysis/dna-analysis) | Comprehensive genetic analysis tool with health traits, ancestry analysis, and interactive dashboard. |
 | [GitHub Portfolio Analyzer](Data-Science-and-Analysis/github-analyzers/portfolio-analyzer) | Analysis tool for GitHub portfolios. |
@@ -108,4 +142,4 @@ Portfolio/
 
 ## About Me
 
-Connect with me on [Medium](https://medium.com/@Stochastic-Sisyphus) or [LinkedIn](https://www.linkedin.com/in/vanessa-b-msba).
+Connect with me on [Medium](https://medium.com/@Stochastic-Sisyphus) or [LinkedIn](https://www.linkedin.com/in/vanessa-b-189958196).

@@ -1,4 +1,0 @@
-include README.md
-include requirements.txt
-include data_processing/config.yaml
-
