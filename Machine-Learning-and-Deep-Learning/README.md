@@ -7,3 +7,6 @@ Collection of ML/DL projects across different domains:
 - **computer-vision**: Image processing and analysis
 - **nlp**: Natural Language Processing projects
 - **recommender-systems**: Recommendation algorithms
+
+
+![recommendation sample log output](Miscellaneous/assets/IMG_2939.jpeg)
