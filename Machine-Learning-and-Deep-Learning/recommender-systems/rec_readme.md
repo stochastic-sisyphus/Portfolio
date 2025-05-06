@@ -4,6 +4,10 @@ This project implements a content recommendation system using a neural network m
 Originally, I developed this Recommendation System for an AI Platform with Hundreds of Thousands of Monthly Users
 All proprietary language and specific details have been modified.
 
+## Sample Output
+
+![Recommendation system sample log output](https://github.com/stochastic-sisyphus/Portfolio/raw/main/Miscellaneous/assets/IMG_2939.jpeg)
+
 ## Features
 
 - **Custom Metrics**: Tracks requests, errors, response time, cache size, prediction latency, and model version.
