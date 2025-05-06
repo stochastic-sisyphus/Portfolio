@@ -9,4 +9,5 @@ Collection of ML/DL projects across different domains:
 - **recommender-systems**: Recommendation algorithms
 
 
-![recommendation sample log output](Miscellaneous/assets/IMG_2939.jpeg)
+
+![Recommendation system sample log output](Miscellaneous/assets/IMG_2939.jpeg)
