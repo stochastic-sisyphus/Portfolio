@@ -10,4 +10,4 @@ Collection of ML/DL projects across different domains:
 
 
 
-![Recommendation system sample log output](Miscellaneous/assets/IMG_2939.jpeg)
+![Recommendation system sample log output](Miscellaneous/assets/IMG_2939.jpg)
