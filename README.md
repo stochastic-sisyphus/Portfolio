@@ -17,7 +17,7 @@ Portfolio adjacent. This is a collection of data analysis and data science, stat
 
 ## Quick Links
 
-- [M.S.](#M.S. Analytics; Machine Learning Specialization)
+- [M.S. Analytics; Machine Learning Specialization](#M.S. Analytics; Machine Learning Specialization)
   - [Skills and Technologies](#skills-and-technologies)
   - [Quick Links](#quick-links)
   - [Featured Projects](#featured-projects)
