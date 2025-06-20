@@ -1,4 +1,4 @@
-# MSBA
+# M.S. Analytics; Machine Learning Specialization
 
 ----
 Portfolio adjacent. This is a collection of data analysis and data science, statistical methods, machine learning, deep learning, and other topics. I am fascinated with translating abstract ideas into tangible solutions and am particularly interested in the intersection of technology and practical applications.
@@ -17,7 +17,7 @@ Portfolio adjacent. This is a collection of data analysis and data science, stat
 
 ## Quick Links
 
-- [MSBA](#msba)
+- [M.S.](# M.S. Analytics; Machine Learning Specialization)
   - [Skills and Technologies](#skills-and-technologies)
   - [Quick Links](#quick-links)
   - [Featured Projects](#featured-projects)
